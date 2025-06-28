@@ -7,7 +7,7 @@ Welcome to the source code for my personal portfolio website! This project showc
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-v4-purple?style=flat-square)](https://tailwindcss.com/)
 [![Vercel](https://img.shields.io/badge/Vercel-black?logo=vercel&logoColor=white&style=flat-square)](https://vercel.com/)
 
-**[Live Demo](https://mdtaquiimam.vercel.app/)**
+**[Live Demo](https://taqui-imam.vercel.app/)**
 
 ## Features 🚀
 
