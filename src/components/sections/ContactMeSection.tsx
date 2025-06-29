@@ -99,7 +99,7 @@ function ContactMeSection() {
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="w-2/3 space-y-4"
+                className=" w-full md:w-2/3 space-y-4"
               >
                 <FormField
                   control={form.control}
