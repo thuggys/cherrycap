@@ -328,7 +328,15 @@ function PixelTypingText({
 export default function PixelTypingDemo() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const words = ["I AM","A DEV", "SHIPS", "IDEAS"];
+   const [showText, setShowText] = useState(false);
+  // Start after 3 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowText(true);
+    }, 3000);
 
+    return () => clearTimeout(timer);
+  }, []);
   const handleComplete = () => {
     setTimeout(() => {
       setCurrentWordIndex((prev) => (prev + 1) % words.length);
@@ -337,16 +345,18 @@ export default function PixelTypingDemo() {
 
   return (
     <div className="flex  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-      <PixelTypingText
-        key={currentWordIndex}
-        text={words[currentWordIndex]}
-        delay={300}
-        cursor={false}
-        repeat={false}
-        waitTime={1000}
-        onComplete={handleComplete}
-        className="font-mono"
-      />
+    {showText && (
+        <PixelTypingText
+          key={currentWordIndex}
+          text={words[currentWordIndex]}
+          delay={300}
+          cursor={false}
+          repeat={false}
+          waitTime={1000}
+          onComplete={handleComplete}
+          className="font-mono"
+        />
+      )}
     </div>
   );
 }

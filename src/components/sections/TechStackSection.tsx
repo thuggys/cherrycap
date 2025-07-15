@@ -40,7 +40,7 @@ function TechStackSection() {
     { name: "Claude Ai", icon: ClaudeIconIcon },
   ];
   return (
-    <section className=" border-x full-line-bottom relative">
+    <section className=" z-10 border-x full-line-bottom relative">
       <h2 className="pl-4 text-3xl font-semibold relative full-line-bottom ">
         Tech Stack
       </h2>

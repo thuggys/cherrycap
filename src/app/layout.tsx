@@ -5,18 +5,17 @@ import {
   IBM_Plex_Mono as FontMono,
   IBM_Plex_Sans as FontSans,
 } from "next/font/google";
-import Header from "@/components/Header";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { portfolioConfig } from "@/lib/portfolioConfig";
 import { Analytics } from "@vercel/analytics/react"
-export const fontSans = FontSans({
+ const fontSans = FontSans({
   weight: ["400", "500", "600"],
   display: "swap",
   subsets: ["latin"],
   variable: "--cd-font-sans",
 });
 
-export const fontMono = FontMono({
+ const fontMono = FontMono({
   weight: ["400", "500", "600"],
   display: "swap",
   subsets: ["latin"],
@@ -74,7 +73,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
+          {/* <Header /> */}
         {children}
         </ThemeProvider>
         <Analytics />

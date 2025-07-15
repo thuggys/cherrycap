@@ -11,33 +11,32 @@ import ExperienceSection from "@/components/sections/ExperienceSection";
 import ContactMeSection from "@/components/sections/ContactMeSection";
 import FooterSection from "@/components/sections/FooterSection";
 
+import LandingAnimationWrapper from "@/components/LandingAnimationWrapper";
+
 export default function Home() {
   return (
-    <main className="min-h-dvh max-w-full overflow-x-hidden sm:overflow-x-visible relative w-full mx-auto md:max-w-3xl pt-2 px-2 md:px-0 ">
-     
-
+    <LandingAnimationWrapper>
       <TopSection />
 
       <ProfileSection />
-
       <SectionSeparator className="full-line-bottom" />
+
       <BioSection />
       <SectionSeparator className="" />
       <SocialLinks />
       <SectionSeparator className="full-line-bottom" />
       <AboutSection />
       <SectionSeparator className="full-line-bottom" />
-      <TechStackSection/>
+      <TechStackSection />
       <SectionSeparator className="full-line-bottom" />
-      <ProjectsSection/>
+      <ProjectsSection />
       <SectionSeparator className="full-line-bottom" />
-      <ExperienceSection/>
+      <ExperienceSection />
       <SectionSeparator className="full-line-bottom" />
-      <ContactMeSection/>
+      <ContactMeSection />
       <SectionSeparator className="full-line-bottom" />
-      <FooterSection/>
+      <FooterSection />
       <SectionSeparator className="full-line-bottom" />
-
-    </main>
+    </LandingAnimationWrapper>
   );
 }
