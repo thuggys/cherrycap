@@ -52,7 +52,8 @@ export const metadata: Metadata = {
     creator: portfolioConfig.seo.twitterHandle,
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
+    apple: "/myImage.png",
   },
 };
 
