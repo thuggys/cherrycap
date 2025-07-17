@@ -2,7 +2,7 @@ import ProfileSection from "@/components/sections/ProfileSection";
 
 import SectionSeparator from "@/components/ui/SectionSeperator";
 import BioSection from "@/components/sections/BioSection";
-import SocialLinks from "@/components/sections/SocialLinks";
+
 import AboutSection from "@/components/sections/AboutSection";
 import TopSection from "@/components/sections/TopSection";
 import TechStackSection from "@/components/sections/TechStackSection";
@@ -22,8 +22,6 @@ export default function Home() {
       <SectionSeparator className="full-line-bottom" />
 
       <BioSection />
-      <SectionSeparator className="" />
-      <SocialLinks />
       <SectionSeparator className="full-line-bottom" />
       <AboutSection />
       <SectionSeparator className="full-line-bottom" />
