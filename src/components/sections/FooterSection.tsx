@@ -20,8 +20,7 @@ function FooterSection() {
                   "before:bg-size-[10px_10px] before:[--pattern-foreground:var(--color-edge)]/56"
                 )}
               />
-        <p className="mb-1 text-center font-mono text-sm text-balance text-muted-foreground">Inspired by tailwindcss.com &amp;&amp; @iamncdai</p>
-        <p className=" text-center font-mono text-sm text-balance text-muted-foreground">Built by <a className="font-semibold underline" href="https://mdtaquiimam.vercel.app/" target="_blank" rel="noopener">Md Taqui Imam</a>. The source code is available on {" "}<a className="font-semibold underline" href="https://github.com/taqui-786/Taqui" target="_blank" rel="noopener">GitHub</a>.</p>
+        <p className="text-center font-mono text-sm text-balance text-muted-foreground">Built by <a className="font-semibold underline" href="https://cherrycapitalweb.com/" target="_blank" rel="noopener">Scott Heney</a>.</p>
     </section>
   )
 }

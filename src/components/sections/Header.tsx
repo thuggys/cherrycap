@@ -98,7 +98,7 @@ export const Header = ({ transition }: { transition: boolean }) => {
 
          <PortfolioInfoDialog/>
           <Link
-            href={"https://github.com/taqui-786"}
+            href={"https://github.com/thuggys"}
             target="_blank"
             className={cn(
               buttonVariants({ variant: "outline", size: "icon" }),

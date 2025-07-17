@@ -1,31 +1,33 @@
 "use client"
 
-import { Info, ExternalLink, Github, Eye } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import React from "react";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Eye, ExternalLink, Info } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 
 export default function PortfolioInfoDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" size="icon" className="rounded-full cursor-pointer" >
+        <Button variant="outline" size="icon" className="rounded-full">
           <Info className="h-4 w-4" />
-          <span className="sr-only">Portfolio Info</span>
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            Extra Information
+            <Info className="h-5 w-5" />
+            Portfolio Info
           </DialogTitle>
         </DialogHeader>
+        
         <div className="space-y-4 font-mono">
           {/* Visitor Stats */}
           <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
@@ -42,20 +44,11 @@ export default function PortfolioInfoDialog() {
           <div className="space-y-3">
             <h4 className="text-sm font-medium text-muted-foreground">Quick Links</h4>
 
-            {/* Source Code Link */}
+            {/* Business Link */}
             <Button variant="outline" className="w-full justify-start" asChild>
-              <a href="https://github.com/taqui-786/Taqui" target="_blank" rel="noopener noreferrer">
-                <Github className="h-4 w-4 mr-2" />
-                View Source Code
-                <ExternalLink className="h-3 w-3 ml-auto" />
-              </a>
-            </Button>
-
-            {/* Another Portfolio Link */}
-            <Button variant="outline" className="w-full justify-start" asChild>
-              <a href="https://mdtaquiimam.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <a href="https://cherrycapitalweb.com/" target="_blank" rel="noopener noreferrer"> {/* TODO: Update with actual domain */}
                 <ExternalLink className="h-4 w-4 mr-2" />
-                Check Out My Other Portfolio
+                Visit CherryCapitalWeb
                 <ExternalLink className="h-3 w-3 ml-auto" />
               </a>
             </Button>

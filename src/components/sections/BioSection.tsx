@@ -1,18 +1,16 @@
-import { BriefcaseBusiness, CodeXml, Globe, Mail, MapPin, Phone } from "lucide-react";
+import { BriefcaseBusiness, CodeXml, Mail, MapPin } from "lucide-react";
 import React from "react";
 
 function BioSection() {
   const bioData = [
     {
       icon: CodeXml,
-      title: "Senior Frontend Developer & Tech Blog Writter",
+      title: "Full Stack Developer & Web Solutions Expert",
       type: "text",
     },
-    { icon: BriefcaseBusiness, title: "Currently Working as a Freelancer", type: "text" },
-    { icon: MapPin, title: "Ramgarh, Jharkhand, India", type: "text" },
-    { icon: Phone, title: "+91 76672-82384", type: "link" },
-    { icon: Mail, title: "mdtaqui.jhar@gmail.com", type: "link" },
-    { icon: Globe, title: "mdtaquiimam.vercel.app", type: "link" },
+    { icon: BriefcaseBusiness, title: "Founder of CherryCapitalWeb", type: "text" },
+    { icon: MapPin, title: "Beulah, Michigan", type: "text" },
+    { icon: Mail, title: "scott@cherrycapitalweb.com", type: "link" }, // TODO: Update with actual email
   ];
   return (
     <section className="relative flex full-line-bottom h-auto border-x p-4 gap-2 flex-col items-center justify-center">
@@ -28,9 +26,9 @@ function BioSection() {
             <a
               target="_blank"
               href={
-                item.title.includes("vercel.app")
+                item.title.includes("cherrycapitalweb.com")
                   ? `https://${item.title}`
-                  : item.title.startsWith("+91")
+                  : item.title.startsWith("+1")
                   ? `tel:${item.title}`
                   : `mailto:${item.title}`
               }

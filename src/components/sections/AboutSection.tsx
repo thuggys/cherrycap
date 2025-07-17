@@ -8,28 +8,30 @@ function AboutSection() {
       </h2>
       <div className="flex flex-col gap-4 py-4 font-mono text-sm ">
         <p className="tracking-wide">
-          Hi there! I&apos;m Md Taqui Imam — a full stack web developer from Ramgarh
-          Cantt, Jharkhand, India. I love building stuffs and sharing cool
-          projects in the open-source community.
+          Hi there! I&apos;m Scott Heney — founder of CherryCapitalWeb and a full stack developer 
+          cooking up modern web solutions in Beulah, Michigan. I love building innovative websites 
+          and helping local businesses level up their digital presence.
         </p>
         <p className="tracking-wide">
-          I&apos;m good at making neat and mobile-friendly websites using JavaScript,
-          TypeScript, React, Next.js, and Node.js. I also know HTML5, CSS3, and
-          tools like Tailwind CSS, Shadcn Ui, and Material UI to make clean and
-          nice-looking designs.
+          I specialize in creating fast, responsive, and professional websites using cutting-edge 
+          technologies like Next.js, React, TypeScript, and Node.js. While most of my competition 
+          relies on WordPress, I build custom solutions from scratch using modern web frameworks 
+          that deliver superior performance and user experience.
         </p>
         <p className="tracking-wide">
-          Right now, I&apos;m doing my Bachelor&apos;s in Computer Applications from
-          Doranda College, Ranchi University. I&apos;m learning lots of coding stuff
-          and also making real projects to improve my skills.
+          Having built several websites in the area, I&apos;ve seen firsthand how powerful modern 
+          web development can be compared to traditional WordPress approaches. I&apos;m passionate 
+          about learning new technologies and always pushing the boundaries of what&apos;s possible 
+          on the web.
         </p>
         <p className="tracking-wide">
-          Besides coding, I enjoy writing tech blogs, watching anime, and
-          playing games. I like learning new things and always try to turn ideas
-          into real web apps.
+          When I&apos;m not coding, I&apos;m exploring the latest web development trends, 
+          contributing to open source projects, and finding new ways to help businesses 
+          stand out in an increasingly digital world.
         </p>
         <p className="tracking-wide">
-          Let&apos;s connect and build something awesome!
+          Ready to build something amazing? Let&apos;s work together to create a website 
+          that actually converts and performs!
         </p>
       </div>
     </section>

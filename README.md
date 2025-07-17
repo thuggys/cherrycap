@@ -1,22 +1,22 @@
-# Taqui - My Portfolio ✨
+# Scott Heney - CherryCapitalWeb Portfolio ✨
 
-Welcome to the source code for my personal portfolio website! This project showcases my skills, projects, and experience using a modern tech stack. The site is designed to be clean, responsive, and engaging.
+Welcome to the source code for Scott Heney's personal portfolio website showcasing CherryCapitalWeb! This project demonstrates modern web development skills and business expertise using cutting-edge tech that outperforms WordPress solutions. The site is designed to be fast, responsive, and professional.
 
 [![Next.js](https://img.shields.io/badge/Next.js-v15-blue?style=flat-square)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-blue?style=flat-square)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-v4-purple?style=flat-square)](https://tailwindcss.com/)
 [![Vercel](https://img.shields.io/badge/Vercel-black?logo=vercel&logoColor=white&style=flat-square)](https://vercel.com/)
 
-**[Live Demo](https://taqui-imam.vercel.app/)**
+**[Live Demo](https://cherrycapitalweb.com/)** <!-- TODO: Update with actual domain -->
 
 ## Features 🚀
 
 - **Responsive Design:**  The portfolio adapts seamlessly to various screen sizes, ensuring a consistent user experience across desktops, tablets, and mobile devices.
 - **Dark Mode:**  Users can easily switch between light and dark themes to match their preferences.
-- **Interactive Profile:** A visually appealing profile section includes an image and an animated text flipper showcasing the developer's roles.
-- **Experience & Projects:**  Collapsible accordions provide detailed information about the developer's experience and projects.  Each project includes links to the GitHub repository and live demo (where available).
-- **Contact Form:** A user-friendly contact form allows visitors to easily reach out.  The form uses Nodemailer to send emails directly to the developer's inbox.  **Note:**  This requires setting up SMTP credentials (see Installation).
-- **Social Links:**  Conveniently access the developer's social media profiles.
+- **Interactive Profile:** A visually appealing profile section includes an image and animated text showcasing Scott's expertise and CherryCapitalWeb services.
+- **Experience & Projects:**  Collapsible accordions provide detailed information about Scott's experience building websites in the Beulah area and showcase projects that demonstrate superiority over WordPress solutions.
+- **Contact Form:** A user-friendly contact form allows potential clients to easily reach out for modern web development services.
+- **Social Links:**  Quick access to Scott's professional social media profiles and CherryCapitalWeb business pages.
 
 ## Tech Stack 🛠️
 

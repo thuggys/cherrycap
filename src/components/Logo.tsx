@@ -44,7 +44,7 @@ export const Logo = ({
         variants={draw ? textVariants : undefined}
         className={cn(" font-mono text-muted-foreground font-medium", sizes[size], className)}
       >
-        Portfolio
+        Welcome!
       </motion.h1>
     </div>
   );

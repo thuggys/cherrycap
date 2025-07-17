@@ -16,7 +16,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Forward, Mail, MailCheck, UserRound } from "lucide-react";
 import { Textarea } from "../ui/textarea";
-import { sendMail } from "@/lib/mailConfiguration";
+import { Skeleton } from "@/components/ui/skeleton";
+
 const FormSchema = z.object({
   name: z.string().min(2, {
     message: "Name is required and must be at least 2 characters.",
@@ -30,6 +31,7 @@ const FormSchema = z.object({
     message: "Message is required and must be at least 2 characters.",
   }),
 });
+
 function ContactMeSection() {
   const [submitted, setSubmitted] = useState(false);
   const form = useForm<z.infer<typeof FormSchema>>({
@@ -40,17 +42,35 @@ function ContactMeSection() {
       message: "",
     },
   });
+
   async function onSubmit(data: z.infer<typeof FormSchema>) {
-    const sent = await sendMail({
-      email: data.email,
-      name: data.name,
-      message: data.message,
-    });
-    if (sent) {
-      setSubmitted(true);
-      form.reset();
+    try {
+      // Submit to Web3Forms
+      const formData = new FormData();
+      formData.append("access_key", "c2147bbb-80e5-4247-be9b-59b36f804b59");
+      formData.append("name", data.name);
+      formData.append("email", data.email);
+      formData.append("message", data.message);
+      formData.append("subject", `Portfolio Contact: ${data.name}`);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        form.reset();
+      } else {
+        console.error("Form submission failed");
+        // TODO: Add error handling/toast notification
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      // TODO: Add error handling/toast notification
     }
   }
+
   return (
     <section className="relative h-fit border-x full-line-bottom px-11">
       <div
@@ -73,17 +93,17 @@ function ContactMeSection() {
         <div className="w-full flex py-4 items-center justify-center">
           <div className="h-fit w-fit flex items-center justify-center gap-4">
             <div
-              className="flex size-12 shrink-0 items-center justify-center rounded-md bg-muted text-muted-foreground  "
+              className="flex size-12 shrink-0 items-center justify-center rounded-md bg-muted text-muted-foreground"
               aria-hidden="true"
             >
               <MailCheck size={40} />
             </div>
             <div className="flex flex-col items-start gap-1.5">
               <h2 className="font-medium font-mono text-lg">
-                Thanks for reaching out
+                Thanks for reaching out!
               </h2>
               <p className="text-muted-foreground text-sm">
-                Stay tuned, i will try to reply as soon as possible.
+                Your message has been sent. I'll get back to you soon!
               </p>
             </div>
           </div>
@@ -91,7 +111,7 @@ function ContactMeSection() {
       ) : (
         <>
           <div className="w-full flex items-center justify-center gap-2">
-            <h2 className="relative  text-2xl font-semibold py-4 font-mono">
+            <h2 className="relative text-2xl font-semibold py-4 font-mono">
               Contact Me
             </h2>
           </div>
@@ -99,7 +119,7 @@ function ContactMeSection() {
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className=" w-full md:w-2/3 space-y-4"
+                className="w-full md:w-2/3 space-y-4"
               >
                 <FormField
                   control={form.control}
@@ -111,7 +131,7 @@ function ContactMeSection() {
                         <div className="relative">
                           <Input
                             className="peer ps-9 pe-9 font-mono"
-                            placeholder="Md Taqui Imam"
+                            placeholder="Your name"
                             type="text"
                             {...field}
                           />
@@ -120,7 +140,6 @@ function ContactMeSection() {
                           </div>
                         </div>
                       </FormControl>
-
                       <FormMessage />
                     </FormItem>
                   )}
@@ -135,8 +154,8 @@ function ContactMeSection() {
                         <div className="relative">
                           <Input
                             className="peer ps-9 pe-9 font-mono"
-                            placeholder="mdtaqui.jhar@gmail.com"
-                            type="text"
+                            placeholder="your@email.com"
+                            type="email"
                             {...field}
                           />
                           <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 peer-disabled:opacity-50">
@@ -144,7 +163,6 @@ function ContactMeSection() {
                           </div>
                         </div>
                       </FormControl>
-
                       <FormMessage />
                     </FormItem>
                   )}
@@ -159,22 +177,23 @@ function ContactMeSection() {
                         <div className="relative">
                           <Textarea
                             className="peer font-mono"
-                            placeholder="Your message ..."
+                            placeholder="Tell me about your project..."
                             {...field}
                           />
                         </div>
                       </FormControl>
-
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-                <Button type="submit" disabled={form.formState.isSubmitting} >
-                  {
-                    form.formState.isSubmitting ? "Sending":<>
-                  Send <Forward />
+                <Button type="submit" disabled={form.formState.isSubmitting}>
+                  {form.formState.isSubmitting ? (
+                    <Skeleton className="w-20 h-10" />
+                  ) : (
+                    <>
+                      Send <Forward />
                     </>
-                  }
+                  )}
                 </Button>
               </form>
             </Form>

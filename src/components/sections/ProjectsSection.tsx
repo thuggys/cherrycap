@@ -1,418 +1,238 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
+import { ExternalLink, Calendar } from "lucide-react";
+import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
+import { cn } from "@/lib/utils";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-  Box2LineIcon,
-} from "@/components/ui/accordion";
-import { ArrowUpRight, ChevronDown, ChevronUp } from "lucide-react";
-import { Button } from "../ui/button";
+} from "../ui/accordion";
+
 function ProjectsSection() {
-  const [showMore, setShowMore] = useState(false);
-  const [openItem, setOpenItem] = useState("project-1");
-  const filteredProjects = showMore ? projects : projects.slice(0, 4);
   return (
-    <section className=" border-x full-line-bottom relative">
-      <h2 className="pl-4 text-3xl font-semibold relative full-line-bottom ">
-        Projects{" "}
-        <sup className="ml-1 font-mono text-sm text-muted-foreground select-none">
-          ({projects.length})
-        </sup>
+    <section className="border-x full-line-bottom relative">
+      <h2 className="pl-4 text-3xl font-semibold relative full-line-bottom">
+        Featured Projects
       </h2>
-      <div className="">
-        {filteredProjects.map((project, index) => (
-          <Accordion
-            type="single"
-            collapsible
-            value={openItem}
-            onValueChange={setOpenItem}
-            key={index}
-          >
-            <AccordionItem value={`project-${project.id}`}>
-              <AccordionTrigger aria-label={project.createdAt}>
-                <div className="flex items-center justify-between p-4 h-full w-fit ">
-                  <div className="  size-6 shrink-0">
-                    <Box2LineIcon />
+      <div className="relative ">
+        <Accordion type="single" collapsible className="w-full">
+          {projects.map((project, index) => (
+            <AccordionItem key={project.id} value={`item-${project.id}`}>
+              <AccordionTrigger className="hover:no-underline">
+                <div className="flex items-center gap-4 p-4 w-full">
+                  <div className="flex flex-1 flex-col gap-2 text-left">
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-xl font-semibold">{project.title}</h3>
+                      <Badge variant="secondary" className="text-xs">
+                        {project.type}
+                      </Badge>
+                    </div>
+                    <p className="text-sm text-muted-foreground line-clamp-2">
+                      {project.description}
+                    </p>
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <Calendar className="size-3" />
+                      <span>Launched {project.launchDate}</span>
+                    </div>
                   </div>
-                </div>
-                <div className="flex-1 flex flex-col items-start justify-center py-4 pl-4 border-l font-mono gap-1 h-full">
-                  <h3 className="text-balance font-medium text-base leading-snug flex gap-2 items-center justify-center ">
-                    {project.title}
-                    <a
-                      href={project.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <ArrowUpRight className="size-4 text-muted-foreground hover:text-primary" />
-                    </a>
-                  </h3>
-                  <span className="text-muted-foreground text-xs  ">
-                    {project.createdAt}
-                  </span>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <Button variant="outline" size="sm" asChild>
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1"
+                      >
+                        <ExternalLink className="size-3" />
+                        Visit Site
+                      </a>
+                    </Button>
+                  </div>
                 </div>
               </AccordionTrigger>
-              <AccordionContent className="p-4 border-b">
-                <div className="prose prose-sm max-w-none font-mono text-foreground prose-zinc dark:prose-invert prose-headings:font-sans prose-headings:font-semibold prose-headings:text-balance prose-h2:border-b prose-h2:border-edge prose-h2:pb-2 prose-h2:text-2xl prose-lead:text-base prose-a:font-medium prose-a:break-words prose-a:text-foreground prose-a:underline prose-a:underline-offset-4 prose-code:rounded-md prose-code:border prose-code:bg-muted/50 prose-code:px-[0.3rem] prose-code:py-[0.2rem] prose-code:text-sm prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-hr:border-edge">
-                  <p>{project.description}</p>
-                  <ul>
-                    {project.features.map((feature, index) => (
-                      <li key={index}>{feature}</li>
-                    ))}
-                  </ul>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {project.badge.map((badge, index) => (
-                      <span
-                        key={index}
-                        className="inline-flex items-center rounded-lg border bg-zinc-50 px-1.5 py-0.5 font-mono text-xs text-muted-foreground dark:bg-zinc-900"
-                      >
-                        {badge}
-                      </span>
-                    ))}
+              <AccordionContent className="px-4 pb-4">
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-medium mb-2">Project Overview</h4>
+                    <p className="text-sm text-muted-foreground">
+                      {project.overview}
+                    </p>
                   </div>
-                  <div className="mt-0 flex items-center gap-4 justify-start">
-                    <a
-                      href={project.href}
-                      target="_blank"
-                      className="mt-4 flex  hover:text-primary gap-2 items-center justify-center "
-                    >
-                      Github Repository{" "}
-                    </a>
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      className="mt-4 flex  hover:text-primary gap-2  items-center justify-center "
-                    >
-                      Live demo{" "}
-                    </a>
+                  <div>
+                    <h4 className="font-medium mb-2">Key Features</h4>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      {project.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <span className="text-primary">•</span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
+                  <div>
+                    <h4 className="font-medium mb-2">Technologies Used</h4>
+                    <div className="flex flex-wrap gap-1">
+                      {project.technologies.map((tech, idx) => (
+                        <Badge key={idx} variant="outline" className="text-xs">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  {project.results && (
+                    <div>
+                      <h4 className="font-medium mb-2">Results & Impact</h4>
+                      <p className="text-sm text-muted-foreground">
+                        {project.results}
+                      </p>
+                    </div>
+                  )}
                 </div>
               </AccordionContent>
             </AccordionItem>
-          </Accordion>
-        ))}
-      </div>
-
-      <div className="flex items-center py-2 justify-center">
-        {showMore ? (
-          <Button
-            size={"sm"}
-            onClick={() => setShowMore(false)}
-            className="rounded-2xl flex items-center gap-2"
-          >
-            Show Less <ChevronUp />
-          </Button>
-        ) : (
-          <Button
-            size={"sm"}
-            onClick={() => setShowMore(true)}
-            className="rounded-2xl flex items-center gap-2"
-          >
-            Show More <ChevronDown />
-          </Button>
-        )}
+          ))}
+        </Accordion>
       </div>
     </section>
   );
 }
 
 export default ProjectsSection;
+
 const projects = [
   {
     id: 1,
-    title: "WePost",
-    href: "https://github.com/taqui-786/WePost",
-    live: "https://wepost.vercel.app",
-    createdAt: "09-03-2025",
-    description:
-      "WePost is a modern and minimalistic social media platform enabling users to share posts, connect, and engage in discussions. It delivers a seamless and secure experience using the latest web technologies.",
+    title: "Hill Top Soda Shoppe",
+    type: "Local Business",
+    live: "https://www.hilltopsodashoppe.com/",
+    launchDate: "2024",
+    description: "Modern website for Benzonia's beloved ice cream and coffee shop, featuring summer menu showcases and event management.",
+    overview: "Hill Top Soda Shoppe needed a fresh, modern web presence to match their delightful summer atmosphere. Built a responsive site that captures the joy of their handcrafted ice cream and coffee experience while making it easy for customers to explore menus and find location details.",
     features: [
-      "User authentication including sign up, sign in, and logout",
-      "Create, edit, and delete posts",
-      "Like and comment functionality on posts",
-      "Customizable user profiles",
-      "Responsive user interface design",
-      "Built with Next.js 15 framework",
-      "Authentication powered by Lucia",
-      "Data stored in Neon PostgreSQL and managed with Prisma ORM",
-      "Efficient data fetching using Tanstack Query",
-      "Modern UI components styled with shadcn-ui and Tailwind CSS",
+      "Interactive summer menu display with ice cream flavors",
+      "Responsive design optimized for mobile customers",
+      "Event calendar integration for summer activities",
+      "Location finder with contact information",
+      "Clean, cheerful design matching the shop's atmosphere",
+      "Fast loading times for better user experience"
     ],
-    badge: [
-      "Open source",
+    technologies: [
       "Next.js",
-      "Typescript",
-      "Lucia Auth",
-      "Prisma",
+      "TypeScript", 
       "Tailwind CSS",
-      "Shadcn UI",
-      "Tanstack Query",
+      "Responsive Design",
+      "Performance Optimization"
     ],
+    results: "Delivered a vibrant, user-friendly website that perfectly captures Hill Top's summer joy while providing customers with easy access to menus and location information."
   },
   {
     id: 2,
-    title: "itZmyLink",
-    href: "https://github.com/taqui-786/itZmyLink",
-    live: "https://itzmylink.vercel.app/",
-    createdAt: "14-10-2023",
-    description:
-      "Your all-in-one link management solution, itZmyLink allows you to create personalized link pages, manage multiple links, and track performance effortlessly. Perfect for social media profiles, business cards, and more.",
+    title: "Lynn & Perin Mercantile",
+    type: "Business Website",
+    live: "https://www.lynnandperin.com/",
+    launchDate: "2024",
+    description: "Sophisticated business website for artisanal foods and premium products, featuring multiple business integrations and product showcases.",
+    overview: "Lynn & Perin needed a premium web presence to showcase their curated collection of gourmet products. Created an elegant website that reflects their high-quality offerings while integrating their family of businesses including Victoria's Floral Design.",
     features: [
-      "Create and manage personalized link pages",
-      "Add multiple links to a single page",
-      "Track link performance with analytics",
-      "Customizable themes and styles",
-      "User-friendly interface for easy navigation",
-      "Built with Next.js 14 framework",
-      "Authentication powered by Next-Auth",
-      "Data stored in Supabase",
-      "Modern UI components styled with shadcn-ui and Tailwind CSS",
+      "Professional product showcase and catalog display",
+      "Multi-business integration (floral, catering services)",
+      "Clean, elegant design reflecting premium brand",
+      "Newsletter subscription management",
+      "Mobile-optimized browsing experience",
+      "Business hours and contact integration",
+      "Family business connections and cross-promotion"
     ],
-    badge: [
-      "Open source",
+    technologies: [
       "Next.js",
-      "Typescript",
-      "Next Auth",
-      "Tailwind CSS",
-      "Shadcn UI",
-      "Supabase",
-      "Zod",
+      "TypeScript",
+      "Business Integration", 
+      "Content Management",
+      "Responsive Design",
+      "Tailwind CSS"
     ],
+    results: "Successfully launched a sophisticated business website that elevated their brand presence and better showcases their artisanal product offerings and family of businesses."
   },
   {
     id: 3,
-    title: "Portfolio",
-    href: "https://github.com/taqui-786/Portfolio",
-    live: "https://mdtaquiimam.vercel.app/",
-    createdAt: "15-11-2023",
-    description:
-      "My personal portfolio website showcasing my skills, projects, and experiences. Built with modern web technologies to provide a seamless user experience and highlight my work effectively.",
+    title: "Victoria's Floral Weddings",
+    type: "Service Business",
+    live: "https://www.victoriasfloralweddings.com/",
+    launchDate: "2024",
+    description: "Elegant wedding planning website featuring portfolio galleries, service coordination, and client testimonials for Northern Michigan weddings.",
+    overview: "Victoria's Floral Weddings required a stunning website to showcase their wedding planning expertise and floral arrangements. Built an elegant platform that highlights their 4.9-star rating and captures the beauty of their work through compelling galleries.",
     features: [
-      "Responsive design for all devices",
-      "Showcase of my projects with detailed descriptions",
-      "Integration with GitHub for project links",
-      "Contact form for inquiries",
-      "Built with Next.js 15 framework",
-
-      "Modern UI components styled with shadcn-ui and Tailwind CSS",
+      "Professional portfolio gallery with wedding photos",
+      "Service breakdown (coordination, planning, floristry)",
+      "Client testimonial integration with star ratings",
+      "Contact forms for wedding consultations", 
+      "Mobile-responsive design for on-the-go browsing",
+      "SEO optimization for local wedding searches",
+      "Social proof with 'The Knot' verification display"
     ],
-    badge: [
-      "Open source",
+    technologies: [
       "Next.js",
-      "Typescript",
-      "Framer motion",
-      "Tailwind CSS",
-      "Shadcn UI",
-      "Resend",
+      "TypeScript",
+      "Image Optimization",
+      "Form Management",
+      "SEO Optimization",
+      "Tailwind CSS"
     ],
+    results: "Created a beautiful, conversion-focused website that effectively showcases their wedding expertise and 4.9-star reputation, leading to increased consultation bookings."
   },
   {
     id: 4,
-    title: "Mixcn Ui",
-    href: "https://github.com/taqui-786/mixcnui",
-    live: "https://mixcn-ui.vercel.app/",
-    createdAt: "16-06-2024",
-    description:
-      "A modern UI component library built with Tailwind CSS and Shadcn UI, Mixcn UI provides a set of customizable and reusable components for building responsive web applications.",
+    title: "Tim Smith Construction LLC",
+    type: "Construction Business", 
+    live: "https://www.timsmithconstructionllc.com/",
+    launchDate: "2024",
+    description: "Professional construction company website showcasing quality craftsmanship and project portfolios throughout Northern Michigan.",
+    overview: "Tim Smith Construction needed a professional web presence that reflected their quality craftsmanship and attention to detail. Developed a clean, construction-focused site that builds trust and showcases their expertise in Northern Michigan.",
     features: [
-      "Collection of UI components for web applications",
-      "User can integrate components easily with my own npx command",
-      "Supports dark mode and light mode themes",
-      "Responsive design for all devices",
-      "Customizable components for various use cases",
-      "Built with Next.js 15 framework",
+      "Project portfolio with high-quality construction photos",
+      "Professional service breakdown and capabilities",
+      "Contact forms for project consultations",
+      "Business hours and location information",
+      "Mobile-optimized for field use",
+      "Professional branding and logo integration",
+      "SEO optimized for local construction searches"
     ],
-    badge: [
-      "Open source",
+    technologies: [
       "Next.js",
-      "Typescript",
-      "Framer motion",
-      "Tailwind CSS",
-      "Shadcn UI",
-      "Nextra",
-      "Extra theme docs",
+      "TypeScript", 
+      "Image Galleries",
+      "Contact Forms",
+      "Local SEO",
+      "Tailwind CSS"
     ],
+    results: "Delivered a professional website that establishes credibility and trust, helping Tim Smith Construction stand out in the competitive Northern Michigan construction market."
   },
   {
     id: 5,
-    title: "Devletter",
-    href: "https://github.com/taqui-786/Devletter",
-    live: "https://devletter.vercel.app/",
-    createdAt: "22-11-2023",
-    description:
-      "Devletter is a newsletter platform for developers, allowing users to subscribe to newsletters and get the latest updates on various topics. It provides a user-friendly interface for managing subscriptions and reading newsletters.",
+    title: "Lucky Dog Bar & Grille",
+    type: "Restaurant",
+    live: "https://www.luckydogbarandgrille.com/",
+    launchDate: "2024", 
+    description: "Dynamic restaurant website for Beulah's gathering place, featuring craft beer selection, menu showcases, and community engagement.",
+    overview: "Lucky Dog Bar & Grille wanted a website that captured their role as Beulah's neighborhood gathering place. Built an engaging platform that showcases their craft beer selection, signature THWINGS™, and strong community connections.",
     features: [
-      "Subscribe to newsletters",
-      "Beautiful snow animation effect",
-      "Read newsletters with a clean and minimalistic design",
-      "Responsive user interface design",
-      "Built with Next.js 15 framework",
-      "Data stored in Supabase",
-      "Modern UI components styled with shadcn-ui and Tailwind CSS",
+      "Interactive menu display with signature items",
+      "Craft beer tap rotation showcase (17 rotating taps)",
+      "Customer review integration (4.8 TripAdvisor rating)",
+      "Community events and engagement features",
+      "Location and hours information",
+      "Mobile-friendly for on-the-go customers",
+      "Gallery showcasing food and atmosphere"
     ],
-    badge: [
-      "Open source",
+    technologies: [
       "Next.js",
-      "Typescript",
-      "Prisma",
-      "React hook form",
-      "React snowfall",
-      "Resend",
-      "Zod",
-      "Tailwind CSS",
-      "Shadcn UI",
+      "TypeScript",
+      "Review Integration",
+      "Menu Management", 
+      "Event Calendar",
+      "Tailwind CSS"
     ],
-  },
-  {
-    id: 6,
-    title: "Carousel Maker",
-    href: "https://github.com/taqui-786/crousal-maker",
-    live: "https://crousal-maker.vercel.app/",
-    createdAt: "09-12-2023",
-    description:
-      "Carousel maker is a simple carousel editing platform with in-built carousel templates only you can edit heading, descriptions and Images and download it in both format PDF and JPEG.",
-    features: [
-      "Create and edit carousels with ease",
-      "Choose from a variety of templates all FREE",
-      "Edit carousel headings, descriptions, and images",
-      "Download carousels in PDF and JPEG formats",
-      "User-friendly interface for easy editing",
-      "Built with Next.js 14 framework",
-      "Modern UI components styled with shadcn-ui and Tailwind CSS",
-    ],
-    badge: [
-      "Open source",
-      "Next.js",
-      "Typescript",
-      "Html to Canvas",
-      "JsPDF",
-      "JsZip",
-      "React Image Crop",
-      "Rgb Hex",
-      "Tailwind CSS",
-      "Shadcn UI",
-    ],
-  },
-  {
-    id: 7,
-    title: "Friendz",
-    href: "https://github.com/taqui-786/project-friendz",
-    live: "https://friendz.vercel.app/",
-    createdAt: "16-08-2023",
-    description:
-      "Friendz is a social media platform that allows users to connect with friends, share updates, and engage in discussions. It provides a user-friendly interface for managing friendships and interactions.",
-    features: [
-      "Connect with friends",
-      "Share updates and posts",
-      "Engage in discussions",
-      "User-friendly interface",
-      "Authentication powered by Next-Auth",
-      "Built with Next.js 14 framework",
-      "Modern UI components styled with shadcn-ui and Tailwind CSS",
-    ],
-    badge: [
-      "Open source",
-      "Next Auth",
-      "Typescript",
-      "Firebase image upload",
-      "Editor.js",
-      "Prisma ORM",
-      "Redis cache",
-      "Zod",
-      "Lodash",
-      "Tailwind CSS",
-      "Shadcn UI",
-    ],
-  },
-  {
-    id: 8,
-    title: "GitEstimate",
-    href: "https://github.com/taqui-786/GitEstimate",
-    live: "https://gitestimate.vercel.app/",
-    createdAt: "09-12-2023",
-    description:
-      "GitEstimate is a FUN tool that helps developers estimate the time required to complete tasks based on their GitHub activity. It provides insights into productivity and helps in planning work effectively.",
-    features: [
-      "Estimate task completion time",
-      "Analyze GitHub activity",
-      "Get insights into productivity",
-      "Plan work effectively",
-      "User-friendly interface",
-      "Built with Next.js 14 framework",
-      "Modern UI components styled with shadcn-ui and Tailwind CSS",
-    ],
-    badge: [
-      "Open source",
-      "Next.js",
-      "Typescript",
-      "Html to Canvas",
-      "github-canvas",
-
-      "Tailwind CSS",
-      "Shadcn UI",
-    ],
-  },
-  {
-    id: 9,
-    title: "FormCraft",
-    href: "https://github.com/taqui-786/formcraft",
-    live: "https://formcraft-ti.vercel.app/",
-    createdAt: "25-08-2024",
-    description:
-      "FormCraft is a powerful tool for developers to create forms in GUI and copy the code to use in their projects. It provides a drag-and-drop interface for building forms and managing submissions.",
-    features: [
-      "Drag-and-drop form builder",
-      "Customizable form fields",
-      "Copy and paste code for easy integration",
-      "React Hook Form integration for form validation",
-      "User-friendly interface",
-      "Built with Next.js 14 framework",
-      "Modern UI components styled with shadcn-ui and Tailwind CSS",
-    ],
-    badge: [
-      "Open source",
-      "Next.js",
-      "Typescript",
-      "React Hook Form",
-      "Zod Validation",
-      "Framer Motion",
-
-      "Tailwind CSS",
-      "Shadcn UI",
-    ],
-  },
-  {
-    id: 10,
-    title: "Devzone",
-    href: "https://github.com/taqui-786/Devzone",
-    live: "https://devzone-ti.vercel.app/",
-    createdAt: "03-11-2024",
-    description:
-      "DevZone is an innovative platform designed to connect developers, fostering collaboration and knowledge sharing within the tech community. It offers a space for developers to showcase their skills, share projects, and engage in discussions.",
-    features: [
-      "Developer Profiles: Create and customize your developer profile",
-      "Project Showcase: Share your projects and get feedback from peers",
-      "Collaborative Coding: Real-time code collaboration tools",
-      "Community Forums: Engage in discussions on various tech topics",
-      "Resource Sharing: Share and discover valuable developer resources",
-      "Job Board: Find opportunities or hire talent within the community",
-      "Built with Next.js 14 framework",
-      "Modern UI components styled with shadcn-ui and Tailwind CSS",
-    ],
-    badge: [
-      "Open source",
-      "Next.js",
-      "Typescript",
-      "Zustand",
-      "Realtime Messaging",
-      "Supabase SSR",
-      "React Hook Form",
-      "Zod Validation",
-      "Framer Motion",
-      "Tanstack Query",
-      "Tailwind CSS",
-      "Shadcn UI",
-    ],
-  },
+    results: "Created an engaging website that perfectly captures Lucky Dog's community atmosphere and has helped establish them as Beulah's premier dining destination with a 4.8-star rating."
+  }
 ];
