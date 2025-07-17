@@ -238,24 +238,28 @@ function PixelTypingText({
 
   // Main typing effect
   useEffect(() => {
+    let currentInterval: NodeJS.Timeout;
+    
     const startTyping = () => {
       setIndex((prevIndex) => {
         const newIndex = prevIndex + direction;
 
         if (direction === TypingDirection.Forward && newIndex >= total) {
-          clearInterval(myInterval);
+          clearInterval(currentInterval);
           return total;
         } else if (direction === TypingDirection.Backward && newIndex <= 0) {
-          clearInterval(myInterval);
+          clearInterval(currentInterval);
           return 0;
         }
 
         return newIndex;
       });
     };
-    const newInterval = setInterval(startTyping, delay);
-    setMyInterval(newInterval);
-    return () => clearInterval(newInterval);
+    
+    currentInterval = setInterval(startTyping, delay);
+    setMyInterval(currentInterval);
+    
+    return () => clearInterval(currentInterval);
   }, [total, direction, delay]);
 
   // Handle repeat cycles

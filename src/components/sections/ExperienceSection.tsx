@@ -17,7 +17,7 @@ function ExperienceSection() {
       </h2>
       <div className="relative ">
         <Accordion type="single" collapsible className="w-full">
-          {experienceData.map((experience, index) => (
+          {experienceData.map((experience) => (
             <AccordionItem key={experience.id} value={`item-${experience.id}`}>
               <AccordionTrigger className="hover:no-underline">
                 <div className="flex items-center gap-4 p-4 w-full">
