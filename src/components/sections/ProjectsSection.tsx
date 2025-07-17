@@ -186,7 +186,7 @@ const projects = [
     title: "Tim Smith Construction LLC",
     type: "Construction Business", 
     live: "https://www.timsmithconstructionllc.com/",
-    launchDate: "2024",
+    launchDate: "2025",
     description: "Professional construction company website showcasing quality craftsmanship and project portfolios throughout Northern Michigan.",
     overview: "Tim Smith Construction needed a professional web presence that reflected their quality craftsmanship and attention to detail. Developed a clean, construction-focused site that builds trust and showcases their expertise in Northern Michigan.",
     features: [
@@ -213,7 +213,7 @@ const projects = [
     title: "Lucky Dog Bar & Grille",
     type: "Restaurant",
     live: "https://www.luckydogbarandgrille.com/",
-    launchDate: "2024", 
+    launchDate: "2025", 
     description: "Dynamic restaurant website for Beulah's gathering place, featuring craft beer selection, menu showcases, and community engagement.",
     overview: "Lucky Dog Bar & Grille wanted a website that captured their role as Beulah's neighborhood gathering place. Built an engaging platform that showcases their craft beer selection, signature THWINGS™, and strong community connections.",
     features: [
