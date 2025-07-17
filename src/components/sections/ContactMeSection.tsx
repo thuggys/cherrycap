@@ -103,7 +103,7 @@ function ContactMeSection() {
                 Thanks for reaching out!
               </h2>
               <p className="text-muted-foreground text-sm">
-                Your message has been sent. I'll get back to you soon!
+                Your message has been sent. I&apos;ll get back to you soon!
               </p>
             </div>
           </div>

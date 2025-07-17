@@ -1,9 +1,7 @@
 "use client";
 import React from "react";
-import { ExternalLink, Github, Calendar, Code, Building, Heart } from "lucide-react";
+import { Calendar, Code, Building, Heart } from "lucide-react";
 import { Badge } from "../ui/badge";
-import { Button } from "../ui/button";
-import { cn } from "@/lib/utils";
 import {
   Accordion,
   AccordionContent,

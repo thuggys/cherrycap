@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import LinkedinLogo from "../../../public/linkedinLogo.webp";
 import { cn } from "@/lib/utils";
 import { ExternalLink } from "lucide-react";
@@ -34,11 +35,12 @@ function SocialLinks() {
             key={index}
           >
             <div className="relative size-12 shrink-0">
-              <img
+              <Image
                 src={link.src}
                 alt={link.alt}
+                width={48}
+                height={48}
                 className="rounded-xl"
-                loading="lazy"
               />
             </div>
             <div className="flex flex-col items-start grow justify-between">

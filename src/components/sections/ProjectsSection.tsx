@@ -2,7 +2,7 @@ import React from "react";
 import { ExternalLink, Calendar } from "lucide-react";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
-import { cn } from "@/lib/utils";
+
 import {
   Accordion,
   AccordionContent,
@@ -18,7 +18,7 @@ function ProjectsSection() {
       </h2>
       <div className="relative ">
         <Accordion type="single" collapsible className="w-full">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <AccordionItem key={project.id} value={`item-${project.id}`}>
               <AccordionTrigger className="hover:no-underline">
                 <div className="flex items-center gap-4 p-4 w-full">

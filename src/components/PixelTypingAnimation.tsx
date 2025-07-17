@@ -255,7 +255,7 @@ function PixelTypingText({
     };
     const newInterval = setInterval(startTyping, delay);
     setMyInterval(newInterval);
-    return () => clearInterval(myInterval);
+    return () => clearInterval(newInterval);
   }, [total, direction, delay]);
 
   // Handle repeat cycles
