@@ -228,9 +228,7 @@ function PixelTypingText({
   const [direction, setDirection] = useState<TypingDirection>(
     TypingDirection.Forward
   );
-  const [myInterval, setMyInterval] = useState<NodeJS.Timeout>(
-    {} as NodeJS.Timeout
-  );
+
   const [isComplete, setIsComplete] = useState(false);
 
   const letters = useMemo(() => text.split(""), [text]);
@@ -257,7 +255,6 @@ function PixelTypingText({
     };
     
     currentInterval = setInterval(startTyping, delay);
-    setMyInterval(currentInterval);
     
     return () => clearInterval(currentInterval);
   }, [total, direction, delay]);
