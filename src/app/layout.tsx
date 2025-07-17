@@ -7,7 +7,9 @@ import {
 } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { portfolioConfig } from "@/lib/portfolioConfig";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+import { StructuredData } from "@/components/StructuredData";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
  const fontSans = FontSans({
   weight: ["400", "500", "600"],
   display: "swap",
@@ -30,30 +32,100 @@ export const metadata: Metadata = {
   },
   description: portfolioConfig.description,
 
-  // added new keywords for seo
+  // Enhanced SEO keywords
   keywords: portfolioConfig.seo.keywords,
   authors: portfolioConfig.seo.authors,
   creator: portfolioConfig.name,
+  publisher: portfolioConfig.name,
 
+  // Enhanced metadata for E-A-T signals
+  other: {
+    // Local SEO geo-tags for Beulah, Michigan
+    "geo.position": "44.6344;-86.2422",
+    "geo.placename": "Beulah, Michigan, United States", 
+    "geo.region": "US-MI",
+    "ICBM": "44.6344, -86.2422",
+    
+    // Business metadata
+    "business-type": "Web Development Services",
+    "price-range": "$$",
+    "service-area": "Michigan, United States",
+    
+    // Technical metadata
+    "format-detection": "telephone=no, date=no, address=no, email=no",
+    "theme-color": "#000000",
+    "color-scheme": "dark light",
+    
+    // Authority signals
+    "author": "Scott Heney",
+    "copyright": `© ${new Date().getFullYear()} Scott Heney - CherryCapitalWeb`,
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  },
+
+  // Canonical URL
+  alternates: {
+    canonical: portfolioConfig.seo.url,
+  },
+
+  // Enhanced OpenGraph
   openGraph: {
     type: "website",
     locale: "en_US",
     url: portfolioConfig.seo.url,
     title: portfolioConfig.name,
     description: portfolioConfig.description,
-    images: [`${portfolioConfig.seo.url}/og-image.png`],
-    siteName: portfolioConfig.name,
+    images: [
+      {
+        url: `${portfolioConfig.seo.url}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "Scott Heney - Full Stack Developer & CherryCapitalWeb Founder",
+      },
+      {
+        url: `${portfolioConfig.seo.url}/myImage.png`,
+        width: 400,
+        height: 400,
+        alt: "Scott Heney Profile Photo",
+      }
+    ],
+    siteName: "CherryCapitalWeb Portfolio",
   },
+
+  // Enhanced Twitter metadata
   twitter: {
     card: "summary_large_image",
     title: portfolioConfig.name,
     description: portfolioConfig.description,
     images: [`${portfolioConfig.seo.url}/og-image.png`],
     creator: portfolioConfig.seo.twitterHandle,
+    site: portfolioConfig.seo.twitterHandle,
   },
+
+  // Enhanced icons
   icons: {
-    icon: "/favicon.png",
-    apple: "/myImage.png",
+    icon: [
+      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [
+      { url: "/myImage.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      { rel: "mask-icon", url: "/favicon.png", color: "#000000" },
+    ],
+  },
+
+  // Robot configuration
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -64,6 +136,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* DNS Prefetching for performance */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//api.web3forms.com" />
+        <link rel="dns-prefetch" href="//github.com" />
+        <link rel="dns-prefetch" href="//linkedin.com" />
+        
+        {/* Preload critical resources */}
+        <link rel="preload" href="/myImage.png" as="image" type="image/png" />
+        <link rel="preload" href="/og-image.png" as="image" type="image/png" />
+        
+        {/* Preconnect to external domains */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body
         className={`${fontSans.variable} ${fontMono.variable} `}
         suppressHydrationWarning
@@ -77,6 +164,8 @@ export default function RootLayout({
           {/* <Header /> */}
         {children}
         </ThemeProvider>
+        <StructuredData />
+        <BreadcrumbSchema />
         <Analytics />
       </body>
     </html>
