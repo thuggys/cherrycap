@@ -80,12 +80,6 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "Scott Heney - Full Stack Developer & CherryCapitalWeb Founder",
-      },
-      {
-        url: `${portfolioConfig.seo.url}/myImage.png`,
-        width: 400,
-        height: 400,
-        alt: "Scott Heney Profile Photo",
       }
     ],
     siteName: "CherryCapitalWeb Portfolio",
