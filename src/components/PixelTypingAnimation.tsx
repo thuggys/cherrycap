@@ -236,8 +236,6 @@ function PixelTypingText({
 
   // Main typing effect
   useEffect(() => {
-    let currentInterval: NodeJS.Timeout;
-    
     const startTyping = () => {
       setIndex((prevIndex) => {
         const newIndex = prevIndex + direction;
@@ -254,7 +252,7 @@ function PixelTypingText({
       });
     };
     
-    currentInterval = setInterval(startTyping, delay);
+    const currentInterval = setInterval(startTyping, delay);
     
     return () => clearInterval(currentInterval);
   }, [total, direction, delay]);
