@@ -110,10 +110,14 @@ function ContactMeSection() {
         </div>
       ) : (
         <>
-          <div className="w-full flex items-center justify-center gap-2">
+          <div className="w-full flex flex-col items-center justify-center gap-2">
             <h2 className="relative text-2xl font-semibold py-4 font-mono">
               Contact Me
             </h2>
+            <p className="text-sm text-muted-foreground font-mono text-center">
+              Ready to discuss a website that actually converts?<br/>
+              Call <strong>(616) 260-9863</strong> or fill out the form below
+            </p>
           </div>
           <div className="relative flex flex-col pb-4 items-center justify-center">
             <Form {...form}>
@@ -177,7 +181,7 @@ function ContactMeSection() {
                         <div className="relative">
                           <Textarea
                             className="peer font-mono"
-                            placeholder="Tell me about your project..."
+                            placeholder="Tell me about your business and current website frustrations..."
                             {...field}
                           />
                         </div>

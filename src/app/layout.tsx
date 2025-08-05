@@ -129,7 +129,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* DNS Prefetching for performance */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />

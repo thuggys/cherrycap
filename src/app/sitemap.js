@@ -31,6 +31,42 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/blog`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9, // Blog section
+    },
+    {
+      url: `${baseUrl}/blog/how-i-build-modern-web-apps`,
+      lastModified: '2025-01-16T00:00:00.000Z',
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/wordpress-isnt-cutting-it-2025`,
+      lastModified: '2025-01-15T00:00:00.000Z',
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/building-pwas-michigan-tourism`,
+      lastModified: '2024-12-10T00:00:00.000Z',
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/local-seo-secrets-2024`,
+      lastModified: '2024-12-05T00:00:00.000Z',
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/real-cost-diy-website-builders`,
+      lastModified: '2024-11-28T00:00:00.000Z',
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/#contact`,
       lastModified: currentDate,
       changeFrequency: 'monthly',

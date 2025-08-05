@@ -1,16 +1,17 @@
-import { BriefcaseBusiness, CodeXml, Mail, MapPin } from "lucide-react";
+import { BriefcaseBusiness, CodeXml, Mail, MapPin, Phone } from "lucide-react";
 import React from "react";
 
 function BioSection() {
   const bioData = [
     {
       icon: CodeXml,
-      title: "Full Stack Developer & Web Solutions Expert",
+      title: "Market Expert & Website Solutions Specialist",
       type: "text",
     },
     { icon: BriefcaseBusiness, title: "Founder of CherryCapitalWeb", type: "text" },
     { icon: MapPin, title: "Beulah, Michigan", type: "text" },
     { icon: Mail, title: "scott@cherrycapitalweb.com", type: "link" }, // TODO: Update with actual email
+    { icon: Phone, title: "+1 (616) 260-9863", type: "link" },
   ];
   return (
     <section className="relative flex full-line-bottom h-auto border-x p-4 gap-2 flex-col items-center justify-center">

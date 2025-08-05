@@ -1,12 +1,13 @@
 export const portfolioConfig = {
   // Basic Information
   name: "Scott Heney",
-  title: "Full Stack Developer & Founder of CherryCapitalWeb",
-  description: "Building modern web solutions that outperform WordPress",
+  title: "Market Expert & Website Solutions Specialist | Founder of CherryCapitalWeb",
+  description: "Professional web developer and market expert specializing in custom website solutions that drive business growth. I sell high-performance websites that outperform WordPress and deliver real results for businesses.",
   location: "Beulah, Michigan",
 
   // Contact Information
   email: "scott@cherrycapitalweb.com", // TODO: Update with actual email
+  phone: "+1 (616) 260-9863",
 
   // Social Media Links
   socialLinks: {
@@ -51,6 +52,13 @@ export const portfolioConfig = {
       "full stack developer",
       "beulah michigan",
       "local web developer",
+      "website sales",
+      "market expert",
+      "business websites",
+      "professional web solutions",
+      "custom website development",
+      "website design services",
+      "digital marketing solutions",
     ],
     authors: [
       {

@@ -1,6 +1,6 @@
 'use client';
 
-import { GithubIcon } from 'lucide-react';
+import { GithubIcon, BookOpen } from 'lucide-react';
 import { motion } from 'motion/react';
 
 import { Logo } from '../Logo';
@@ -97,6 +97,15 @@ export const Header = ({ transition }: { transition: boolean }) => {
              <div className="flex gap-3 items-center justify-center">
 
          <PortfolioInfoDialog/>
+          {/* <Link
+            href="/blog"
+            className={cn(
+              buttonVariants({ variant: "outline", size: "icon" }),
+              "rounded-full"
+            )}
+          >
+            <BookOpen />
+          </Link> */}
           <Link
             href={"https://github.com/thuggys"}
             target="_blank"
