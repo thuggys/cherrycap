@@ -1,27 +1,35 @@
+import { blogPosts } from "@/lib/blogPosts";
+import { portfolioConfig } from "@/lib/portfolioConfig";
+
 export default function sitemap() {
-  const baseUrl = process.env.NODE_ENV === 'production' 
-    ? 'https://cherrycapitalweb.com' 
-    : 'http://localhost:3000';
+  const baseUrl = portfolioConfig.seo.url;
 
   const currentDate = new Date().toISOString();
+
+  const blogUrls = blogPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.publishedAt).toISOString(),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }));
 
   return [
     {
       url: baseUrl,
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 1.0, // Homepage - highest priority
+      priority: 1.0,
     },
     {
       url: `${baseUrl}/#about`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.9, // Main sections
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/#experience`,
       lastModified: currentDate,
-      changeFrequency: 'monthly', 
+      changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
@@ -34,49 +42,20 @@ export default function sitemap() {
       url: `${baseUrl}/blog`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.9, // Blog section
+      priority: 0.9,
     },
-    {
-      url: `${baseUrl}/blog/how-i-build-modern-web-apps`,
-      lastModified: '2025-01-16T00:00:00.000Z',
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/wordpress-isnt-cutting-it-2025`,
-      lastModified: '2025-01-15T00:00:00.000Z',
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/building-pwas-michigan-tourism`,
-      lastModified: '2024-12-10T00:00:00.000Z',
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/local-seo-secrets-2024`,
-      lastModified: '2024-12-05T00:00:00.000Z',
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/real-cost-diy-website-builders`,
-      lastModified: '2024-11-28T00:00:00.000Z',
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
+    ...blogUrls,
     {
       url: `${baseUrl}/#contact`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.8, // Contact section
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/#tech-stack`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.7, // Supporting sections
+      priority: 0.7,
     },
   ];
 } 
