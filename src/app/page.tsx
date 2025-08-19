@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import ProfileSection from "@/components/sections/ProfileSection";
 
 import SectionSeparator from "@/components/ui/SectionSeperator";
@@ -12,6 +13,11 @@ import ContactMeSection from "@/components/sections/ContactMeSection";
 import FooterSection from "@/components/sections/FooterSection";
 
 import LandingAnimationWrapper from "@/components/LandingAnimationWrapper";
+
+export const metadata: Metadata = {
+  title: "Scott Heney - Web Developer | CherryCapitalWeb",
+  description: "Modern web development services in Beulah, Michigan. I build fast, secure, and reliable websites that outperform WordPress.",
+};
 
 export default function Home() {
   return (

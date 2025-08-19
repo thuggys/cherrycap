@@ -6,19 +6,19 @@ export function ModernWebAppsPost() {
   return (
     <BlogContent>
       <BlogParagraph>
-        Most "how I code" articles are just recycled tutorial content. This isn't that. This is my actual workflow after building dozens of production apps for real businesses - the good, the bad, and the stuff nobody talks about.
+        Most &quot;how I code&quot; articles are just recycled tutorial content. This isn&apos;t that. This is my actual workflow after building dozens of production apps for real businesses - the good, the bad, and the stuff nobody talks about.
       </BlogParagraph>
 
       <BlogHeading>My Development Stack (The Tools That Actually Matter)</BlogHeading>
       
       <BlogParagraph>
-        Let's start with what I'm actually using every day. No fluff, no trendy frameworks that'll be dead in 6 months - just the tools that actually help me ship fast, reliable websites for real businesses.
+        Let&apos;s start with what I&apos;m actually using every day. No fluff, no trendy frameworks that&apos;ll be dead in 6 months - just the tools that actually help me ship fast, reliable websites for real businesses.
       </BlogParagraph>
 
-      <BlogHeading>Next.js 15: The Foundation That Doesn't Suck</BlogHeading>
+      <BlogHeading>Next.js 15: The Foundation That Doesn&apos;t Suck</BlogHeading>
       
       <BlogParagraph>
-        Here's my exact config file - this is what powers every client site:
+        Here&apos;s my exact config file - this is what powers every client site:
       </BlogParagraph>
 
       <Code language="typescript">
@@ -88,21 +88,21 @@ export default config;`}
       <BlogHeading>Why Next.js 15 Over Everything Else</BlogHeading>
       
       <BlogParagraph>
-        I've tried them all - Gatsby, Nuxt, SvelteKit, even went back to vanilla React. Here's why Next.js 15 is the only framework I trust for client work:
+        I&apos;ve tried them all - Gatsby, Nuxt, SvelteKit, even went back to vanilla React. Here&apos;s why Next.js 15 is the only framework I trust for client work:
       </BlogParagraph>
 
       <BlogParagraph>
         <strong>Performance That Actually Matters</strong>
       </BlogParagraph>
       <BlogList>
-        <BlogListItem>Turbopack builds are 76% faster than Webpack. That's 30 seconds vs 2 minutes for hot reloads</BlogListItem>
+        <BlogListItem>Turbopack builds are 76% faster than Webpack. That&apos;s 30 seconds vs 2 minutes for hot reloads</BlogListItem>
         <BlogListItem>PPR (Partial Prerendering) gives you static speed with dynamic data</BlogListItem>
         <BlogListItem>Automatic image optimization without plugins or configuration hell</BlogListItem>
         <BlogListItem>Bundle splitting that just works - no manual route chunks</BlogListItem>
       </BlogList>
 
       <BlogParagraph>
-        <strong>Developer Experience That Doesn't Fight You</strong>
+        <strong>Developer Experience That Doesn&apos;t Fight You</strong>
       </BlogParagraph>
       <BlogList>
         <BlogListItem>TypeScript support out of the box, no config needed</BlogListItem>
@@ -125,7 +125,7 @@ export default config;`}
         <strong>Real Business Benefits</strong>
       </BlogParagraph>
       <BlogParagraph>
-        When Lynn & Perin Mercantile switched from their WordPress site to my Next.js build:
+        When Lynn &amp; Perin Mercantile switched from their WordPress site to my Next.js build:
       </BlogParagraph>
       <BlogList>
         <BlogListItem>Page load times: 15 seconds → 1.8 seconds</BlogListItem>
@@ -134,14 +134,14 @@ export default config;`}
         <BlogListItem>Security updates: Weekly nightmare → Never</BlogListItem>
       </BlogList>
 
-      <BlogHeading>What I Don't Use (And Why You Shouldn't Either)</BlogHeading>
+      <BlogHeading>What I Don&apos;t Use (And Why You Shouldn&apos;t Either)</BlogHeading>
       
       <BlogList>
         <BlogListItem><strong>Gatsby</strong>: Dead project walking. GraphQL for static sites is overengineering.</BlogListItem>
         <BlogListItem><strong>Create React App</strong>: Abandoned by Meta. Use Vite if you must go vanilla React.</BlogListItem>
         <BlogListItem><strong>Remix</strong>: Good ideas, but Next.js already solved these problems better.</BlogListItem>
         <BlogListItem><strong>SvelteKit</strong>: Great DX, but ecosystem too small for client work.</BlogListItem>
-        <BlogListItem><strong>WordPress</strong>: It's 2025. Stop.</BlogListItem>
+        <BlogListItem><strong>WordPress</strong>: It&apos;s 2025. Stop.</BlogListItem>
       </BlogList>
 
       <BlogHeading>The Stack Around Next.js</BlogHeading>
@@ -175,8 +175,8 @@ export default config;`}
         <BlogListItem><strong>Tailwind v4</strong>: CSS-first config, no more JavaScript bloat.</BlogListItem>
         <BlogListItem><strong>Convex</strong>: Real-time without WebSocket hell. Built-in auth, file storage.</BlogListItem>
         <BlogListItem><strong>Zod</strong>: Validate data at runtime, not just compile time.</BlogListItem>
-        <BlogListItem><strong>React Hook Form</strong>: Forms with validation that don't re-render everything.</BlogListItem>
-        <BlogListItem><strong>Sonner</strong>: Toast notifications that don't break accessibility.</BlogListItem>
+        <BlogListItem><strong>React Hook Form</strong>: Forms with validation that don&apos;t re-render everything.</BlogListItem>
+        <BlogListItem><strong>Sonner</strong>: Toast notifications that don&apos;t break accessibility.</BlogListItem>
         <BlogListItem><strong>Lucide</strong>: 1000+ icons, tree-shakeable, consistent design.</BlogListItem>
       </BlogList>
 
@@ -198,7 +198,7 @@ pnpm dev --turbo`}
       <BlogHeading>Project Structure That Scales</BlogHeading>
       
       <BlogParagraph>
-        Every project starts with this structure. It's not fancy, but it works:
+        Every project starts with this structure. It&apos;s not fancy, but it works:
       </BlogParagraph>
 
       <Code language="bash">
@@ -218,10 +218,10 @@ pnpm dev --turbo`}
 └── types/             # TypeScript definitions`}
       </Code>
 
-      <BlogHeading>Component Architecture That Doesn't Suck</BlogHeading>
+      <BlogHeading>Component Architecture That Doesn&apos;t Suck</BlogHeading>
       
       <BlogParagraph>
-        Here's how I structure components for maintainability:
+        Here&apos;s how I structure components for maintainability:
       </BlogParagraph>
 
       <Code language="tsx">
@@ -252,7 +252,7 @@ export function ContactForm({ businessName, onSuccess }: ContactFormProps) {
       
       if (!response.ok) throw new Error('Failed to send message')
       
-      toast.success('Message sent! I\\'ll get back to you soon.')
+      toast.success('Message sent! I\\&apos;ll get back to you soon.')
       onSuccess?.()
     } catch (error) {
       toast.error('Something went wrong. Try again.')
@@ -317,17 +317,17 @@ export function ContactForm({ businessName, onSuccess }: ContactFormProps) {
       </BlogList>
 
       <BlogParagraph>
-        The choice is obvious. Next.js 15 isn't just faster to develop with - it's better for your business and your users.
+        The choice is obvious. Next.js 15 isn&apos;t just faster to develop with - it&apos;s better for your business and your users.
       </BlogParagraph>
 
       <BlogHeading>The Bottom Line</BlogHeading>
       
       <BlogParagraph>
-        This isn't the only way to build websites, but it's the way that works for me and my clients. Fast, reliable, maintainable websites that help businesses grow.
+        This isn&apos;t the only way to build websites, but it&apos;s the way that works for me and my clients. Fast, reliable, maintainable websites that help businesses grow.
       </BlogParagraph>
 
       <BlogParagraph>
-        If you're still fighting with WordPress in 2025, you're making your life harder than it needs to be.
+        If you&apos;re still fighting with WordPress in 2025, you&apos;re making your life harder than it needs to be.
       </BlogParagraph>
     </BlogContent>
   );

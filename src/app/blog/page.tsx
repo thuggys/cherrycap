@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import React from "react";
 import { Calendar, ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -20,6 +21,11 @@ const blogPosts = [
     featured: true,
   },
 ];
+
+export const metadata: Metadata = {
+  title: "Blog | CherryCapitalWeb",
+  description: "Read the latest articles on web development, SEO, and why modern websites outperform WordPress.",
+};
 
 export default function BlogPage() {
   const featuredPosts = blogPosts.filter(post => post.featured);
@@ -49,7 +55,7 @@ export default function BlogPage() {
                     CherryCapital<span className="text-primary">Blog</span>
                   </h1>
                   <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-mono">
-                    Real talk about modern web development, local business, and why WordPress isn't always the answer
+                    Real talk about modern web development, local business, and why WordPress isn&apos;t always the answer
                   </p>
                 </div>
               </div>
@@ -168,7 +174,7 @@ export default function BlogPage() {
                 Ready to ditch WordPress?
               </h2>
               <p className="text-muted-foreground max-w-md mx-auto font-mono text-sm">
-                Let's build your business a modern website that actually converts customers instead of losing them to slow loading times.
+                Let&apos;s build your business a modern website that actually converts customers instead of losing them to slow loading times.
               </p>
               <Button asChild>
                 <Link href="/#contact">
