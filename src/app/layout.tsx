@@ -10,6 +10,7 @@ import { portfolioConfig } from "@/lib/portfolioConfig";
 import { Analytics } from "@vercel/analytics/react";
 import { StructuredData } from "@/components/StructuredData";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { ChatAssistant } from "@/components/ui/ChatAssistant";
  const fontSans = FontSans({
   weight: ["400", "500", "600"],
   display: "swap",
@@ -157,6 +158,9 @@ export default function RootLayout({
         >
           {/* <Header /> */}
         {children}
+        <div className="fixed bottom-4 right-4 z-50">
+          <ChatAssistant />
+        </div>
         </ThemeProvider>
         <StructuredData />
         <BreadcrumbSchema />
