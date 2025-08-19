@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { BlogContent, BlogHeading, BlogParagraph, BlogList, BlogListItem } from '@/components/BlogContent';
 import { Code } from '@/components/Code';

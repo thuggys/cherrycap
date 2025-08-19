@@ -146,7 +146,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </Button>
               <Button variant="outline" asChild>
                 <Link href="/#contact">
-                  Let's Work Together
+                  Let&apos;s Work Together
                 </Link>
               </Button>
             </div>

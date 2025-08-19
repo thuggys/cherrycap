@@ -49,7 +49,7 @@ export default function BlogPage() {
                     CherryCapital<span className="text-primary">Blog</span>
                   </h1>
                   <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-mono">
-                    Real talk about modern web development, local business, and why WordPress isn't always the answer
+                    Real talk about modern web development, local business, and why WordPress isn&apos;t always the answer
                   </p>
                 </div>
               </div>
@@ -168,11 +168,11 @@ export default function BlogPage() {
                 Ready to ditch WordPress?
               </h2>
               <p className="text-muted-foreground max-w-md mx-auto font-mono text-sm">
-                Let's build your business a modern website that actually converts customers instead of losing them to slow loading times.
+                Let&apos;s build your business a modern website that actually converts customers instead of losing them to slow loading times.
               </p>
               <Button asChild>
                 <Link href="/#contact">
-                  Let's Work Together
+                  Let&apos;s Work Together
                 </Link>
               </Button>
             </div>

@@ -150,7 +150,7 @@ export function BlockQuote({ quote, author, role, company }: QuoteProps) {
         <Quote className="size-6 text-primary mt-1 flex-shrink-0" />
         <div>
           <p className="text-lg italic leading-relaxed mb-4 text-foreground">
-            "{quote}"
+            &quot;{quote}&quot;
           </p>
           {author && (
             <div className="text-sm text-muted-foreground">

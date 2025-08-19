@@ -1,6 +1,23 @@
 import { portfolioConfig } from "@/lib/portfolioConfig";
 
-export function BlogStructuredData({ post }) {
+interface BlogPost {
+  id: number;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  publishedAt: string;
+  readTime: string;
+  category: string;
+  tags: string[];
+  featured: boolean;
+}
+
+export function BlogStructuredData({ post }: { post?: BlogPost }) {
+  if (!post) {
+    return null;
+  }
+
   const articleStructuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
