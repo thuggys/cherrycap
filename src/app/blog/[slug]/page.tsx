@@ -108,7 +108,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   <p className="text-muted-foreground font-mono text-sm leading-relaxed mb-4">
                     Scott Heney is the founder of CherryCapitalWeb, a modern web development agency 
                     serving local businesses in Northern Michigan. With expertise in Next.js, React, 
-                    and local SEO, Scott helps businesses outperform their WordPress&apos;using competitors
+                    and local SEO, Scott helps businesses outperform their WordPress-using competitors
                     through faster, more secure custom websites.
                   </p>
                   <div className="flex gap-3">
