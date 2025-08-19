@@ -40,14 +40,14 @@ export default config;`}
       <BlogHeading>Lists Are Clean Too</BlogHeading>
 
       <BlogParagraph>
-        What I don't use and why:
+        What I don&apos;t use and why:
       </BlogParagraph>
 
       <BlogList>
-        <BlogListItem><strong>Redux</strong>: React's built-in state is fine for 90% of cases</BlogListItem>
+        <BlogListItem><strong>Redux</strong>: React&apos;s built-in state is fine for 90% of cases</BlogListItem>
         <BlogListItem><strong>Styled Components</strong>: Tailwind is faster and more maintainable</BlogListItem>
-        <BlogListItem><strong>WordPress</strong>: Obviously. It's 2025, come on.</BlogListItem>
-        <BlogListItem><strong>jQuery</strong>: This isn't 2015</BlogListItem>
+        <BlogListItem><strong>WordPress</strong>: Obviously. It&apos;s 2025, come on.</BlogListItem>
+        <BlogListItem><strong>jQuery</strong>: This isn&apos;t 2015</BlogListItem>
       </BlogList>
 
       <BlogParagraph>

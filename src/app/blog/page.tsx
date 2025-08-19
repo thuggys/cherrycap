@@ -4,7 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { FlickeringGrid } from "@/components/ui/FlickingGridBG";
-import { BlogStructuredData } from "@/components/BlogStructuredData";
 
 // TODO: Replace with actual blog data from CMS or API
 const blogPosts = [
@@ -27,7 +26,7 @@ export default function BlogPage() {
 
   return (
     <>
-      <BlogStructuredData />
+
       <div className="min-h-screen bg-background">
         <main className="h-dvh max-w-full overflow-x-hidden sm:overflow-x-visible relative w-full mx-auto md:max-w-3xl pt-12 px-2 md:px-0">
           {/* Header Section with Grid Background */}
@@ -49,7 +48,7 @@ export default function BlogPage() {
                     CherryCapital<span className="text-primary">Blog</span>
                   </h1>
                   <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-mono">
-                    Real talk about modern web development, local business, and why WordPress isn't always the answer
+                    Real talk about modern web development, local business, and why WordPress isn&apos;t always the answer
                   </p>
                 </div>
               </div>
@@ -168,11 +167,11 @@ export default function BlogPage() {
                 Ready to ditch WordPress?
               </h2>
               <p className="text-muted-foreground max-w-md mx-auto font-mono text-sm">
-                Let's build your business a modern website that actually converts customers instead of losing them to slow loading times.
+                Let&apos;s build your business a modern website that actually converts customers instead of losing them to slow loading times.
               </p>
               <Button asChild>
                 <Link href="/#contact">
-                  Let's Work Together
+                  Let&apos;s Work Together
                 </Link>
               </Button>
             </div>

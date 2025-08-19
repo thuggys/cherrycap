@@ -6,15 +6,15 @@ export function NextjsSpecialPost() {
     <BlogContent>
       <BlogParagraph>
         When billion-dollar companies need websites that perform flawlessly under massive traffic, 
-        they don't choose WordPress. They choose Next.js. Here's why the same technology powering 
+        they don&apos;t choose WordPress. They choose Next.js. Here&apos;s why the same technology powering
         Netflix and Nike should be powering your business website too.
       </BlogParagraph>
 
       <BlogHeading>The Enterprise Standard for Modern Websites</BlogHeading>
       
       <BlogParagraph>
-        Next.js isn't just another web framework - it's the technology that powers some of the 
-        world's most demanding websites. When companies like Nike need to handle millions of 
+        Next.js isn&apos;t just another web framework - it&apos;s the technology that powers some of the
+        world&apos;s most demanding websites. When companies like Nike need to handle millions of
         customers during product launches, or when Netflix needs to stream content globally 
         without a hiccup, they trust Next.js to deliver.
       </BlogParagraph>
@@ -22,20 +22,20 @@ export function NextjsSpecialPost() {
       <BlogHeading>The Companies That Prove It Works</BlogHeading>
 
       <BlogParagraph>
-        Let's talk about who's actually using Next.js in production:
+        Let&apos;s talk about who&apos;s actually using Next.js in production:
       </BlogParagraph>
 
       <BlogList>
         <BlogListItem><strong>Nike</strong>: Handles millions of global customers and product launches</BlogListItem>
         <BlogListItem><strong>Spotify</strong>: Serves 500+ million users worldwide</BlogListItem>
-        <BlogListItem><strong>OpenAI</strong>: Powers ChatGPT's interface that millions use daily</BlogListItem>
+        <BlogListItem><strong>OpenAI</strong>: Powers ChatGPT&apos;s interface that millions use daily</BlogListItem>
         <BlogListItem><strong>Stripe</strong>: Processes billions in payments - performance equals money</BlogListItem>
         <BlogListItem><strong>Netflix</strong>: Global streaming where every millisecond matters</BlogListItem>
         <BlogListItem><strong>Sonos</strong>: Premium audio brand demanding perfect user experiences</BlogListItem>
       </BlogList>
 
       <BlogParagraph>
-        These aren't small startups experimenting with trendy technology. These are industry 
+        These aren&apos;t small startups experimenting with trendy technology. These are industry
         leaders who chose Next.js because their businesses depend on websites that work 
         perfectly, every time.
       </BlogParagraph>
@@ -43,14 +43,14 @@ export function NextjsSpecialPost() {
       <BlogHeading>Why Performance Equals Profit</BlogHeading>
 
       <BlogParagraph>
-        Here's the brutal truth about website performance: every second your site takes to load 
+        Here&apos;s the brutal truth about website performance: every second your site takes to load
         costs you 7% of potential customers. When I migrate businesses from WordPress to Next.js, 
         they typically see their page load times drop from 15+ seconds to under 2 seconds. 
-        That's not just a technical improvement - that's a direct impact on revenue.
+        That&apos;s not just a technical improvement - that&apos;s a direct impact on revenue.
       </BlogParagraph>
 
       <BlogParagraph>
-        Google's data shows that 53% of mobile users abandon sites that take longer than 3 seconds 
+        Google&apos;s data shows that 53% of mobile users abandon sites that take longer than 3 seconds
         to load. WordPress sites regularly fail this test. Next.js sites consistently pass with 
         flying colors.
       </BlogParagraph>
@@ -58,15 +58,15 @@ export function NextjsSpecialPost() {
       <BlogHeading>The Security Advantage</BlogHeading>
 
       <BlogParagraph>
-        WordPress sites get hacked 90,000 times per minute globally. That's not a typo. The 
+        WordPress sites get hacked 90,000 times per minute globally. That&apos;s not a typo. The
         constant security updates, plugin vulnerabilities, and maintenance headaches are why 
         enterprise companies abandoned WordPress years ago.
       </BlogParagraph>
 
       <BlogParagraph>
-        Next.js sites don't have plugin ecosystems that create security vulnerabilities. They're 
+        Next.js sites don&apos;t have plugin ecosystems that create security vulnerabilities. They&apos;re
         built with modern security practices from the ground up. When Stripe processes billions 
-        in payments, they can't afford security risks - that's why they chose Next.js.
+        in payments, they can&apos;t afford security risks - that&apos;s why they chose Next.js.
       </BlogParagraph>
 
       <BlogHeading>SEO That Actually Works</BlogHeading>
@@ -78,7 +78,7 @@ export function NextjsSpecialPost() {
       </BlogParagraph>
 
       <BlogParagraph>
-        Next.js sites consistently score 90+ on Google PageSpeed Insights out of the box. They're 
+        Next.js sites consistently score 90+ on Google PageSpeed Insights out of the box. They&apos;re
         mobile-first, fast-loading, and built with SEO best practices. No plugins required, 
         no ongoing optimization needed - just results.
       </BlogParagraph>
@@ -127,22 +127,22 @@ export function NextjsSpecialPost() {
       <BlogHeading>Future-Proof Technology</BlogHeading>
 
       <BlogParagraph>
-        WordPress is built on 20-year-old technology that's showing its age. Major companies 
-        have already moved on to modern solutions. Google's algorithm updates increasingly 
+        WordPress is built on 20-year-old technology that&apos;s showing its age. Major companies
+        have already moved on to modern solutions. Google&apos;s algorithm updates increasingly
         favor fast, modern websites over slow, outdated ones.
       </BlogParagraph>
 
       <BlogParagraph>
-        Next.js represents the future of web development. It's actively developed by Vercel 
-        and backed by major tech companies. When you invest in a Next.js website, you're 
+        Next.js represents the future of web development. It&apos;s actively developed by Vercel
+        and backed by major tech companies. When you invest in a Next.js website, you&apos;re
         investing in technology that will remain cutting-edge for years to come.
       </BlogParagraph>
 
       <BlogHeading>What This Means for Your Business</BlogHeading>
 
       <BlogParagraph>
-        When you choose Next.js for your business website, you're not just getting a website - 
-        you're getting the same enterprise-grade technology that powers some of the world's 
+        When you choose Next.js for your business website, you&apos;re not just getting a website -
+        you&apos;re getting the same enterprise-grade technology that powers some of the world&apos;s
         most successful digital businesses:
       </BlogParagraph>
 
@@ -159,27 +159,27 @@ export function NextjsSpecialPost() {
 
       <BlogParagraph>
         While your competitors struggle with slow WordPress sites that frustrate customers 
-        and hurt their search rankings, you'll have a website that works as hard as you do. 
+        and hurt their search rankings, you&apos;ll have a website that works as hard as you do.
         A website that loads instantly, converts visitors into customers, and never needs 
         maintenance or security updates.
       </BlogParagraph>
 
       <BlogParagraph>
-        This isn't about having the latest technology for the sake of it. This is about having 
+        This isn&apos;t about having the latest technology for the sake of it. This is about having
         a competitive advantage that directly impacts your bottom line.
       </BlogParagraph>
 
       <BlogHeading>Ready to Join the Leaders?</BlogHeading>
 
       <BlogParagraph>
-        Next.js isn't just the future of web development - it's the present. Companies like 
+        Next.js isn&apos;t just the future of web development - it&apos;s the present. Companies like
         Nike, Spotify, and Netflix chose it because it delivers results. Your business 
         deserves the same advantage.
       </BlogParagraph>
 
       <BlogParagraph>
         Ready to experience what enterprise-grade web performance can do for your business? 
-        Let's build you a website that competes with the best in the world.
+        Let&apos;s build you a website that competes with the best in the world.
       </BlogParagraph>
     </BlogContent>
   );
