@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import {
@@ -26,23 +26,73 @@ export function ChatAssistant() {
     { sender: 'ai', text: 'Hello! How can I help you today?' },
   ]);
   const [inputValue, setInputValue] = useState('');
+  const scrollAreaRef = useRef<HTMLDivElement>(null);
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (inputValue.trim() === '') return;
 
     const userMessage: Message = { sender: 'user', text: inputValue };
     setMessages((prevMessages) => [...prevMessages, userMessage]);
     setInputValue('');
 
-    // Mock AI response
-    setTimeout(() => {
-      const aiResponse: Message = {
-        sender: 'ai',
-        text: "Thanks for your message! I'm still under development, but I'll be able to help soon.",
-      };
-      setMessages((prevMessages) => [...prevMessages, aiResponse]);
-    }, 1000);
+    const aiMessage: Message = { sender: 'ai', text: '' };
+    setMessages((prevMessages) => [...prevMessages, aiMessage]);
+
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: inputValue }),
+      });
+
+      if (!response.body) {
+        throw new Error('No response body');
+      }
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let done = false;
+
+      while (!done) {
+        const { value, done: readerDone } = await reader.read();
+        done = readerDone;
+        const chunk = decoder.decode(value, { stream: true });
+        setMessages((prevMessages) => {
+          const lastMessage = prevMessages[prevMessages.length - 1];
+          if (lastMessage.sender === 'ai') {
+            return [
+              ...prevMessages.slice(0, -1),
+              { ...lastMessage, text: lastMessage.text + chunk },
+            ];
+          }
+          return prevMessages;
+        });
+      }
+    } catch (error) {
+      console.error('Error streaming response:', error);
+      setMessages((prevMessages) => {
+        const lastMessage = prevMessages[prevMessages.length - 1];
+        if (lastMessage.sender === 'ai') {
+          return [
+            ...prevMessages.slice(0, -1),
+            { ...lastMessage, text: 'Sorry, something went wrong.' },
+          ];
+        }
+        return prevMessages;
+      });
+    }
   };
+
+  useEffect(() => {
+    if (scrollAreaRef.current) {
+      scrollAreaRef.current.scrollTo({
+        top: scrollAreaRef.current.scrollHeight,
+        behavior: 'smooth',
+      });
+    }
+  }, [messages]);
 
   return (
     <Dialog>
@@ -59,7 +109,7 @@ export function ChatAssistant() {
           </DialogDescription>
         </DialogHeader>
         <Card className="flex flex-col h-[500px]">
-          <ScrollArea className="flex-grow">
+          <ScrollArea className="flex-grow" ref={scrollAreaRef}>
             <CardContent className="p-4 space-y-4">
               {messages.map((message, index) => (
                 <div
