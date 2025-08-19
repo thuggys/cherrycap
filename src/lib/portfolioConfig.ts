@@ -6,23 +6,23 @@ export const portfolioConfig = {
   location: "Beulah, Michigan",
 
   // Contact Information
-  email: "scott@cherrycapitalweb.com", // TODO: Update with actual email
+  email: "scott@cherrycapitalweb.com",
   phone: "+1 (616) 260-9863",
 
   // Social Media Links
   socialLinks: {
-    facebook: "https://www.facebook.com/cherrycapitalweb", // TODO: Update with actual social links
+    facebook: "https://www.facebook.com/profile.php?id=61571003491816",
     twitter: "https://twitter.com/cherrycapweb",
     linkedin: "https://www.linkedin.com/in/scott-heney",
-    external: "https://cherrycapitalweb.com", // TODO: Update with actual domain
+    external: "https://www.cherrycapitalweb.com",
     github: "https://github.com/thuggys",
   },
 
   // SEO Information
   seo: {
-    ogImage: "https://cherrycapitalweb.com/og-image.png", // TODO: Update with actual domain
-    url: "https://cherrycapitalweb.com", // TODO: Update with actual domain
-    twitterHandle: "@cherrycapweb", // TODO: Update with actual Twitter handle
+    ogImage: "https://www.cherrycapitalweb.com/og-image.png",
+    url: "https://www.cherrycapitalweb.com",
+    twitterHandle: "@cherrycapweb",
     keywords: [
       "scott",
       "heney",

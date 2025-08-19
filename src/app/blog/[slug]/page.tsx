@@ -7,22 +7,7 @@ import Link from "next/link";
 import { FlickeringGrid } from "@/components/ui/FlickingGridBG";
 import { BlogStructuredData } from "@/components/BlogStructuredData";
 import { NextjsSpecialPost } from "@/components";
-
-// TODO: Replace with actual blog data from CMS or API
-const blogPosts = [
-  {
-    id: 1,
-    title: "What Makes Next.js Special: Why Enterprise Companies Choose It Over Everything Else",
-    slug: "what-makes-nextjs-special",
-    excerpt: "Nike, Spotify, OpenAI, and Netflix all run on Next.js. Here's exactly why this framework dominates the modern web and what it means for your business website.",
-    content: "Next.js Special Content", // This will be handled by the component
-    publishedAt: "2025-01-18",
-    readTime: "9 min read",
-    category: "Technology",
-    tags: ["Next.js", "Performance", "Enterprise", "Modern Web", "Framework"],
-    featured: true,
-  },
-];
+import { blogPosts } from "@/lib/blogPosts";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -38,7 +23,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
-      <BlogStructuredData />
+      <BlogStructuredData post={post} />
       <div className="min-h-screen bg-background">
         <main className="h-dvh max-w-full overflow-x-hidden sm:overflow-x-visible relative w-full mx-auto md:max-w-3xl pt-12 px-2 md:px-0">
         {/* Header Section */}
