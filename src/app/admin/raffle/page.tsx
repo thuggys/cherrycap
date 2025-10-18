@@ -1,12 +1,32 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { RaffleEntry, RaffleWinner } from "@/lib/db";
 import Link from "next/link";
 
+interface Entry {
+  _id: string;
+  _creationTime: number;
+  email: string;
+  firstName: string;
+  lastName: string;
+  profession: string;
+  skills: string;
+  linkedinUrl?: string;
+  portfolioUrl?: string;
+  bio?: string;
+  ipAddress: string;
+}
+
+interface Winner extends Entry {
+  winnerId: string;
+  status: string;
+  hostingExpiresAt: string;
+  supportExpiresAt: string;
+}
+
 export default function RaffleAdminPage() {
-  const [entries, setEntries] = useState<RaffleEntry[]>([]);
-  const [winners, setWinners] = useState<RaffleWinner[]>([]);
+  const [entries, setEntries] = useState<Entry[]>([]);
+  const [winners, setWinners] = useState<Winner[]>([]);
   const [stats, setStats] = useState({ totalEntries: 0, totalWinners: 0, pendingWinners: 0 });
   const [loading, setLoading] = useState(true);
   const [drawLoading, setDrawLoading] = useState(false);
@@ -56,7 +76,6 @@ export default function RaffleAdminPage() {
       });
 
       if (response.ok) {
-        const winner = await response.json();
         alert(`🎉 Winner drawn successfully!`);
         fetchData();
       } else {
@@ -205,7 +224,7 @@ export default function RaffleAdminPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {winners.map((winner: any) => (
+                  {winners.map((winner) => (
                     <tr key={winner._id} className="border-b hover:bg-muted/50">
                       <td className="px-4 py-2 text-xs border-r">
                         {winner.firstName} {winner.lastName}
@@ -279,7 +298,7 @@ export default function RaffleAdminPage() {
                 </tr>
               </thead>
               <tbody>
-                {entries.map((entry: any) => (
+                {entries.map((entry) => (
                   <tr key={entry._id} className="border-b hover:bg-muted/50">
                     <td className="px-4 py-2 text-xs border-r">
                       {entry.firstName} {entry.lastName}
