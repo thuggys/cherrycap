@@ -10,7 +10,6 @@ import ProjectsSection from "@/components/sections/ProjectsSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
 import ContactMeSection from "@/components/sections/ContactMeSection";
 import FooterSection from "@/components/sections/FooterSection";
-import { RaffleSection } from "@/components/sections/RaffleSection";
 
 import LandingAnimationWrapper from "@/components/LandingAnimationWrapper";
 
@@ -29,8 +28,6 @@ export default function Home() {
       <TechStackSection />
       <SectionSeparator className="full-line-bottom" />
       <ProjectsSection />
-      <SectionSeparator className="full-line-bottom" />
-      <RaffleSection />
       <SectionSeparator className="full-line-bottom" />
       <ExperienceSection />
       <SectionSeparator className="full-line-bottom" />

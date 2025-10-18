@@ -57,7 +57,7 @@ export function RaffleForm() {
 
       setMessage({
         type: "success",
-        text: "You're in the raffle! Good luck! 🎉",
+        text: "You're entered! Good luck! 🎉",
       });
 
       await confetti({
@@ -203,13 +203,13 @@ export function RaffleForm() {
       )}
 
       <p className="text-xs text-muted-foreground text-center">
-        By submitting, you agree we&apos;ll use your info only for the raffle and to contact you if you win. 
+        By submitting, you agree we&apos;ll use your info only for this giveaway and to contact you if you win. 
         We won&apos;t share or sell your data.
       </p>
 
       <div className="flex justify-center">
         <InteractiveHoverButton type="submit" disabled={isSubmitting} className="px-4 py-2 text-sm">
-          {isSubmitting ? "Submitting..." : "Enter the Raffle"}
+          {isSubmitting ? "Submitting..." : "Enter Giveaway"}
         </InteractiveHoverButton>
       </div>
     </form>
