@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
 
     const client = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
     const winners = await client.query(api.raffle.getWinners);
-    const winner = winners.find((w) => w._id === winnerId);
+    const winner = winners.find((w: { _id: string }) => w._id === winnerId);
 
     if (!winner) {
       return NextResponse.json(
