@@ -63,7 +63,7 @@ export default function GiveawayRulesPage() {
             <li>3 months of technical support (starting from project launch date)</li>
           </ul>
           <p className="mt-2">
-            Approximate retail value: $2,500 USD. Prize has no cash value and is non-transferable. 
+            Prize is provided as a professional service with no cash value. Prize is non-transferable. 
             No substitution or cash equivalent permitted except at sponsor&apos;s discretion.
           </p>
         </section>
@@ -77,15 +77,7 @@ export default function GiveawayRulesPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold mb-2">9. Taxes</h2>
-          <p>
-            Winner is solely responsible for any and all federal, state, and local taxes on the prize. 
-            If required by law, sponsor will file appropriate tax forms with the IRS.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-bold mb-2">10. Privacy</h2>
+          <h2 className="text-xl font-bold mb-2">9. Privacy</h2>
           <p>
             Information collected from entrants will be used solely for the purpose of administering this giveaway 
             and contacting the winner. We will not sell, share, or distribute your information to third parties. 
@@ -94,7 +86,7 @@ export default function GiveawayRulesPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold mb-2">11. Limitation of Liability</h2>
+          <h2 className="text-xl font-bold mb-2">10. Limitation of Liability</h2>
           <p>
             By entering, participants agree to release and hold harmless CherryCapitalWeb, its owners, employees, 
             and agents from any and all liability for any injuries, losses, or damages of any kind arising from 
@@ -103,7 +95,7 @@ export default function GiveawayRulesPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold mb-2">12. General Conditions</h2>
+          <h2 className="text-xl font-bold mb-2">11. General Conditions</h2>
           <p>
             Sponsor reserves the right to cancel, suspend, or modify the giveaway if fraud, technical failures, 
             or any other factor beyond sponsor&apos;s reasonable control impairs the integrity or proper functioning 
@@ -113,14 +105,14 @@ export default function GiveawayRulesPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold mb-2">13. Governing Law</h2>
+          <h2 className="text-xl font-bold mb-2">12. Governing Law</h2>
           <p>
             This giveaway is governed by the laws of the State of Michigan, without regard to conflicts of law principles.
           </p>
         </section>
 
         <section>
-          <h2 className="text-xl font-bold mb-2">14. Contact Information</h2>
+          <h2 className="text-xl font-bold mb-2">13. Contact Information</h2>
           <p>
             For questions about this giveaway, contact:<br />
             CherryCapitalWeb<br />
