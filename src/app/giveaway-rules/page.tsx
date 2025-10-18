@@ -64,7 +64,8 @@ export default function GiveawayRulesPage() {
           </ul>
           <p className="mt-2">
             Prize is provided as a professional service with no cash value. Prize is non-transferable. 
-            No substitution or cash equivalent permitted except at sponsor&apos;s discretion.
+            No substitution or cash equivalent permitted except at sponsor&apos;s discretion. Website will 
+            include a small "Built by CherryCapitalWeb" credit link in the footer as part of the agreement.
           </p>
         </section>
 
