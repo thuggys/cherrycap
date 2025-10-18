@@ -1,8 +1,8 @@
 export const portfolioConfig = {
   // Basic Information
   name: "Scott Heney",
-  title: "Market Expert & Website Solutions Specialist | Founder of CherryCapitalWeb",
-  description: "Professional web developer and market expert specializing in custom website solutions that drive business growth. I sell high-performance websites that outperform WordPress and deliver real results for businesses.",
+  title: "Web Engineer & Growth Strategist | Founder of CherryCapitalWeb",
+  description: "I architect custom websites that generate measurable business results. Specialized in building high-performance, conversion-focused digital solutions for ambitious local businesses. Former market analyst turned full-stack engineer. Enterprise-grade technology, boutique service.",
   location: "Beulah, Michigan",
 
   // Contact Information

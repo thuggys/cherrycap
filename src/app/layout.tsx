@@ -10,6 +10,7 @@ import { portfolioConfig } from "@/lib/portfolioConfig";
 import { Analytics } from "@vercel/analytics/react";
 import { StructuredData } from "@/components/StructuredData";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+
  const fontSans = FontSans({
   weight: ["400", "500", "600"],
   display: "swap",
@@ -146,7 +147,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body
-        className={`${fontSans.variable} ${fontMono.variable} `}
+        className={`${fontSans.variable} ${fontMono.variable} relative`}
         suppressHydrationWarning
       >
         <ThemeProvider
@@ -155,8 +156,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* <Header /> */}
-        {children}
+          <div className="relative z-10">
+          {children}
+          </div>
         </ThemeProvider>
         <StructuredData />
         <BreadcrumbSchema />
