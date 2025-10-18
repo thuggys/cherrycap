@@ -9,7 +9,7 @@ export default async function PortfolioPage({ params }: { params: Promise<{ id: 
   const client = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
   
   const winners = await client.query(api.raffle.getWinners);
-  const winner = winners.find((w) => w._id === resolvedParams.id);
+  const winner = winners.find((w: { _id: string }) => w._id === resolvedParams.id);
 
   if (!winner) {
     notFound();
