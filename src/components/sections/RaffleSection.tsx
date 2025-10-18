@@ -39,7 +39,7 @@ export function RaffleSection() {
               freelancers, and anyone ready to level up their online presence.
             </p>
             <p className="text-sm font-mono text-primary font-bold mb-6">
-              🎯 5 Winners will be selected! Applications accepted until October 31st.
+              🎯 1 Winner will be selected! Applications accepted until October 31st.
             </p>
 
             <div className="bg-card p-6 rounded border border-border mb-6">
@@ -76,7 +76,7 @@ export function RaffleSection() {
               <h3 className="font-bold mb-2 text-sm text-primary">How It Works:</h3>
               <p className="text-sm text-muted-foreground font-mono">
                 Fill out the form below with your info and tell us about your skills. We&apos;ll randomly select 
-                a winner each month. Selected winners will work with us to create a portfolio that makes hiring 
+                a winner. The selected winner will work with us to create a portfolio that makes hiring 
                 managers say &quot;yes&quot; before they even meet you.
               </p>
             </div>

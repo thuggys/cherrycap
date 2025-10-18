@@ -171,10 +171,10 @@ export default function RaffleAdminPage() {
         <div className="px-4 py-4 border-x full-line-bottom flex gap-3">
           <Button
             onClick={handleDrawWinner}
-            disabled={drawLoading || stats.totalWinners >= 5}
+            disabled={drawLoading || stats.totalWinners >= 1}
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-mono text-sm"
           >
-            {drawLoading ? "Drawing..." : stats.totalWinners >= 5 ? "✓ All 5 Winners Drawn" : "🎲 Draw Winner"}
+            {drawLoading ? "Drawing..." : stats.totalWinners >= 1 ? "✓ Winner Drawn" : "🎲 Draw Winner"}
           </Button>
           <Button
             onClick={fetchData}
