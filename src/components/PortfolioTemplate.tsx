@@ -1,8 +1,18 @@
 "use client";
 import React from "react";
-import { RaffleEntry } from "@/lib/db";
 
-export function PortfolioTemplate({ entry }: { entry: RaffleEntry }) {
+interface Entry {
+  firstName: string;
+  lastName: string;
+  profession: string;
+  bio?: string;
+  linkedinUrl?: string;
+  portfolioUrl?: string;
+  email: string;
+  skills: string;
+}
+
+export function PortfolioTemplate({ entry }: { entry: Entry }) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white">
       {/* Header/Hero */}
