@@ -1,5 +1,12 @@
 import nodemailer from "nodemailer";
-import { RaffleWinner } from "./db";
+
+interface RaffleWinner {
+  _id: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  profession: string;
+}
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -13,7 +20,7 @@ const transporter = nodemailer.createTransport({
 
 export async function sendWinnerNotification(winner: RaffleWinner) {
   try {
-    const portfolioUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/portfolio/${winner.id}`;
+    const portfolioUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/portfolio/${winner._id}`;
 
     await transporter.sendMail({
       from: process.env.SMTP_FROM,
@@ -73,11 +80,11 @@ export async function sendWinnerNotification(winner: RaffleWinner) {
   }
 }
 
-export function generatePortfolioUrl(winnerId: number): string {
+export function generatePortfolioUrl(winnerId: string): string {
   return `${process.env.NEXT_PUBLIC_BASE_URL}/portfolio/${winnerId}`;
 }
 
-export function getWinnerStats(winners: RaffleWinner[]) {
+export function getWinnerStats(winners: Array<{ status?: string }>) {
   return {
     total: winners.length,
     pending: winners.filter((w) => w.status === "pending").length,
