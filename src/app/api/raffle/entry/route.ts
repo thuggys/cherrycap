@@ -31,7 +31,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const client = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
+    if (!process.env.NEXT_PUBLIC_CONVEX_URL) {
+      console.error("NEXT_PUBLIC_CONVEX_URL is not set");
+      return NextResponse.json(
+        { error: "Server configuration error" },
+        { status: 500 }
+      );
+    }
+
+    const client = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL);
 
     try {
       await client.mutation(api.raffle.checkRateLimit, {
