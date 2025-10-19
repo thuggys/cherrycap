@@ -1,13 +1,19 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { RaffleForm } from "@/components/RaffleForm";
 import { ShineBorder } from "@/components/ui/shine-border";
 import { Highlighter } from "@/components/ui/highlighter";
 
 export function RaffleSection() {
-  const theme = useTheme();
-  const highlightColor = theme.resolvedTheme === "dark" ? "#fe8019" : "#d65d0e";
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const highlightColor = mounted && resolvedTheme === "dark" ? "#fe8019" : "#d65d0e";
 
   return (
     <section className="px-4 border-x full-line-bottom relative">
