@@ -59,7 +59,7 @@ export const checkRateLimit = mutation({
     ipAddress: v.string(),
   },
   handler: async (ctx, args) => {
-    const MAX_ATTEMPTS = 5;
+    const MAX_ATTEMPTS = 10;
     const RATE_LIMIT_WINDOW = 3600000;
 
     const rateLimit = await ctx.db
