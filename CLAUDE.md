@@ -29,10 +29,4 @@ npm run lint       # ESLint check
 ## Recent Changes
 - Improved About section with friendly, professional copy
 - Improved project descriptions with real results
-- Added complete raffle system:
-  - SQLite database for entries/winners
-  - Entry form with validation
-  - Admin dashboard at /admin/raffle
-  - Winner portfolio template
-  - Email notification API
-  - Already integrated into homepage
+- Removed raffle system
