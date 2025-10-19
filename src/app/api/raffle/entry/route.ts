@@ -46,6 +46,7 @@ export async function POST(request: NextRequest) {
         ipAddress,
       });
     } catch (error) {
+      console.error("Rate limit check failed:", error);
       return NextResponse.json(
         { error: error instanceof Error ? error.message : "Rate limited" },
         { status: 429 }
