@@ -26,7 +26,20 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const result = await sendWinnerNotification(winner);
+    if (!winner.email || !winner.firstName || !winner.lastName || !winner.profession) {
+      return NextResponse.json(
+        { error: "Winner data incomplete" },
+        { status: 400 }
+      );
+    }
+
+    const result = await sendWinnerNotification({
+      _id: winner._id,
+      email: winner.email,
+      firstName: winner.firstName,
+      lastName: winner.lastName,
+      profession: winner.profession,
+    });
 
     if (result.success) {
       await client.mutation(api.raffle.updateWinnerStatus, {

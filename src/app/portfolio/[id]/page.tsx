@@ -11,9 +11,18 @@ export default async function PortfolioPage({ params }: { params: Promise<{ id: 
   const winners = await client.query(api.raffle.getWinners);
   const winner = winners.find((w: { _id: string }) => w._id === resolvedParams.id);
 
-  if (!winner) {
+  if (!winner || !winner.firstName || !winner.lastName || !winner.profession || !winner.skills || !winner.email) {
     notFound();
   }
 
-  return <PortfolioTemplate entry={winner} />;
+  return <PortfolioTemplate entry={{
+    firstName: winner.firstName,
+    lastName: winner.lastName,
+    profession: winner.profession,
+    skills: winner.skills,
+    email: winner.email,
+    bio: winner.bio,
+    linkedinUrl: winner.linkedinUrl,
+    portfolioUrl: winner.portfolioUrl,
+  }} />;
 }
