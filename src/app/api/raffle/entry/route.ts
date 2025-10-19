@@ -53,15 +53,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    try {
-      await callConvexMutation("raffle:checkRateLimit", { ipAddress });
-    } catch (error) {
-      console.error("Rate limit check failed:", error);
-      return NextResponse.json(
-        { error: error instanceof Error ? error.message : "Rate limited" },
-        { status: 429 }
-      );
-    }
+
 
     const now = new Date();
     const deadline = new Date(process.env.RAFFLE_DEADLINE || "2025-12-31T23:59:59");
