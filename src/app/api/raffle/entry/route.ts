@@ -93,8 +93,13 @@ export async function POST(request: NextRequest) {
     }
   } catch (error) {
     console.error("Raffle entry error:", error);
+    console.error("Error stack:", error instanceof Error ? error.stack : "No stack trace");
+    console.error("NEXT_PUBLIC_CONVEX_URL:", process.env.NEXT_PUBLIC_CONVEX_URL);
     return NextResponse.json(
-      { error: "Failed to create raffle entry" },
+      { 
+        error: "Failed to create raffle entry",
+        details: error instanceof Error ? error.message : String(error)
+      },
       { status: 500 }
     );
   }
