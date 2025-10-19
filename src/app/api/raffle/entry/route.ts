@@ -7,10 +7,15 @@ async function callConvexMutation(functionPath: string, args: Record<string, unk
     body: JSON.stringify({ path: functionPath, args, format: "json" }),
   });
   
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`Convex API error: ${response.status} - ${errorText}`);
+  }
+  
   const result = await response.json();
   
   if (result.status === "error") {
-    throw new Error(result.error || "Convex mutation failed");
+    throw new Error(result.errorMessage || result.error || "Convex mutation failed");
   }
   
   return result.value;
