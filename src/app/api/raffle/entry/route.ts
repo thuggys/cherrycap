@@ -1,25 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-
-async function callConvexMutation(functionPath: string, args: Record<string, unknown>) {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_CONVEX_URL}/api/mutation`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ path: functionPath, args, format: "json" }),
-  });
-  
-  if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(`Convex API error: ${response.status} - ${errorText}`);
-  }
-  
-  const result = await response.json();
-  
-  if (result.status === "error") {
-    throw new Error(result.errorMessage || result.error || "Convex mutation failed");
-  }
-  
-  return result.value;
-}
+import { ConvexHttpClient } from "convex/browser";
+import { api } from "@/convex/_generated/api";
 
 function getClientIp(request: NextRequest): string {
   const forwardedFor = request.headers.get("x-forwarded-for");
@@ -70,8 +51,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const client = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
+
     try {
-      const entry = await callConvexMutation("raffle:createEntry", {
+      const entry = await client.mutation(api.raffle.createEntry, {
         email,
         ipAddress,
         firstName,
